@@ -1,7 +1,7 @@
 # Awesome Agents in Recommendation, Search & Ads
 
-[![Website](https://img.shields.io/badge/Website-Explore_the_collection-1e6b4f?style=flat-square)](https://YOUR_USERNAME.github.io/awesome-agents-rsa/)
-[![GitHub Pages](https://github.com/YOUR_USERNAME/awesome-agents-rsa/actions/workflows/pages.yml/badge.svg)](https://github.com/YOUR_USERNAME/awesome-agents-rsa/actions/workflows/pages.yml)
+[![Website](https://img.shields.io/badge/Website-Explore_the_collection-1e6b4f?style=flat-square)](https://zhanglong-ustc.github.io/awesome-agents-rsa/)
+[![GitHub Pages](https://github.com/zhanglong-ustc/awesome-agents-rsa/actions/workflows/pages.yml/badge.svg)](https://github.com/zhanglong-ustc/awesome-agents-rsa/actions/workflows/pages.yml)
 
 A curated collection of papers, industry reports, and resources on **LLM-based Agents applied to Recommender Systems, Search, and Advertising** — covering planning, memory, tool use, trajectory-level RL, and production deployments.
 
@@ -165,6 +165,6 @@ Entry format:
 
 ### Contributors
 
-<a href="https://github.com/YOUR_USERNAME/awesome-agents-rsa/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=YOUR_USERNAME/awesome-agents-rsa" />
+<a href="https://github.com/zhanglong-ustc/awesome-agents-rsa/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=zhanglong-ustc/awesome-agents-rsa" />
 </a>
