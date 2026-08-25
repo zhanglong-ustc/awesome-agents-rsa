@@ -51,6 +51,12 @@ For each paper, the data will capture the existing schema's bibliographic metada
 - Validation results recorded in the final task handoff.
 - One focused implementation commit, followed by a push to `main` after secure GitHub authentication succeeds.
 
+## Daily Automation
+
+After the initial full audit, a standalone Codex scheduled task will run every day at 09:00 Asia/Shanghai. It will use the local project checkout, perform an incremental primary-source search, update only evidence-backed entries, regenerate derived outputs, run all validation gates, and push `main` only when the working tree was clean and the verified update succeeds. It must never force-push or overwrite unrelated local changes.
+
+Each run will append to `docs/literature-audit-log.md`, including runs with no credible additions, and report candidate, accepted, corrected, removed, commit, push, and blocker counts. The computer must remain powered on with the desktop app running. Authentication or network failures must leave the repository without a partial commit and must be reported for user action.
+
 ## Safety and Authentication
 
 The personal access token pasted into chat is considered compromised and will not be used or stored. Repository writes will be pushed only after the user revokes that token and completes GitHub authentication through a secure local or browser-based flow.
