@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A curated collection of papers and resources on LLM-based agents in recommendation, search, and advertising."
+    />
+    <meta name="theme-color" content="#f5f1e8" />
+    <title>Awesome Agents in Recommendation, Search &amp; Ads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=__BUILD_VERSION__" />
+  </head>
+  <body>
+    <div class="paper-grain" aria-hidden="true"></div>
+    <button class="mobile-menu" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <aside class="sidebar" aria-label="Site navigation">
+      <a class="brand" href="#top" aria-label="Awesome Agents RSA home">
+        <span class="brand-mark">AG</span>
+        <span>Awesome<br />Agents<br />RSA</span>
+      </a>
+
+      <nav id="navigation"></nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com/YOUR_USERNAME/awesome-agents-rsa" target="_blank" rel="noreferrer">
+          GitHub ↗
+        </a>
+        <span>Rec · Search · Ads · 2025–2026</span>
+      </div>
+    </aside>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">A living research index · Updated from GitHub</p>
+          <h1>Agents in<br /><em>RSA.</em></h1>
+          <p class="intro">
+            A selective guide to LLM-based agents applied to Recommender Systems, Search, and
+            Advertising — covering planning, memory, tool use, trajectory RL, and production deployments.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#explore">Explore the collection</a>
+            <a
+              class="button secondary"
+              href="https://github.com/YOUR_USERNAME/awesome-agents-rsa"
+              target="_blank"
+              rel="noreferrer"
+            >View on GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="orbit" aria-hidden="true">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="orbit-core">AGENT</div>
+          <span class="orbit-label label-a">REC</span>
+          <span class="orbit-label label-b">MEMORY</span>
+          <span class="orbit-label label-c">SEARCH</span>
+          <span class="orbit-label label-d">ADS</span>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Collection statistics">
+        <article><strong id="paper-count">—</strong><span>research entries</span></article>
+        <article><strong id="year-count">—</strong><span>years covered</span></article>
+        <article><strong id="code-count">—</strong><span>open resources</span></article>
+        <article><strong id="latest-year">—</strong><span>latest additions</span></article>
+      </section>
+
+      <section class="explore" id="explore">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Research collection</p>
+            <h2>Find the work that matters.</h2>
+          </div>
+          <p>
+            Search across titles, venues, methods, and descriptions. Filter the full collection
+            without leaving the page.
+          </p>
+        </div>
+
+        <div class="filters" aria-label="Filter research">
+          <label class="search">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Search papers, methods, venues…" />
+          </label>
+          <div class="filter-select" data-filter="category">
+            <button
+              id="category-filter"
+              class="filter-select-trigger"
+              type="button"
+              aria-label="Filter by category"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="category-options"
+            >
+              <span class="filter-select-value">All categories</span>
+              <span class="filter-select-chevron" aria-hidden="true"></span>
+            </button>
+            <div
+              id="category-options"
+              class="filter-select-menu"
+              role="listbox"
+              aria-label="Category"
+              hidden
+            ></div>
+          </div>
+          <div class="filter-select" data-filter="year">
+            <button
+              id="year-filter"
+              class="filter-select-trigger"
+              type="button"
+              aria-label="Filter by year"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="year-options"
+            >
+              <span class="filter-select-value">All years</span>
+              <span class="filter-select-chevron" aria-hidden="true"></span>
+            </button>
+            <div
+              id="year-options"
+              class="filter-select-menu"
+              role="listbox"
+              aria-label="Year"
+              hidden
+            ></div>
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <span id="results-count">Loading the collection…</span>
+          <button id="clear-filters" type="button">Clear filters</button>
+        </div>
+        <div id="active-tags" class="active-tags" aria-live="polite"></div>
+        <div id="collection" class="collection" aria-live="polite"></div>
+      </section>
+
+      <section class="contribute" id="contributing">
+        <p class="eyebrow">Open collection</p>
+        <h2>Found something we missed?</h2>
+        <p>
+          Suggest a paper, industry deployment, or resource by opening a GitHub issue.
+        </p>
+        <a
+          class="button primary"
+          href="https://github.com/YOUR_USERNAME/awesome-agents-rsa/issues/new"
+          target="_blank"
+          rel="noreferrer"
+        >Open a GitHub issue ↗</a>
+      </section>
+
+      <section class="contributors" id="contributors">
+        <div class="contributors-heading">
+          <p class="eyebrow">The people behind the collection</p>
+          <h2>Contributors</h2>
+        </div>
+        <div class="contributor-list">
+          <a
+            class="contributor-card"
+            href="https://github.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://github.com/YOUR_USERNAME.png?size=160"
+              alt="GitHub avatar"
+              width="80"
+              height="80"
+              loading="lazy"
+            >
+            <span class="contributor-copy">
+              <strong>@YOUR_USERNAME</strong>
+              <span>Creator &amp; maintainer</span>
+            </span>
+            <span class="contributor-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>Awesome Agents in Recommendation, Search &amp; Ads</span>
+        <span>Built from structured research data · <span id="current-year"></span></span>
+      </footer>
+    </main>
+
+    <div id="detail-backdrop" class="detail-backdrop" hidden></div>
+    <aside
+      id="paper-detail"
+      class="paper-detail"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="detail-title"
+    >
+      <div class="detail-inner">
+        <button id="detail-close" class="detail-close" type="button" aria-label="Close paper details">×</button>
+        <h2 id="detail-title" class="detail-title"></h2>
+        <p class="detail-paper-url">
+          <span>论文链接：</span>
+          <a id="detail-paper-url" href="" target="_blank" rel="noreferrer"></a>
+        </p>
+        <section class="detail-section" lang="zh-CN">
+          <h3>中文摘要</h3>
+          <p id="detail-abstract-zh"></p>
+        </section>
+        <section class="detail-section" lang="en">
+          <h3>English Abstract</h3>
+          <p id="detail-abstract-en"></p>
+        </section>
+      </div>
+    </aside>
+
+    <noscript>This page needs JavaScript to display the research collection.</noscript>
+    <script src="./app.js?v=__BUILD_VERSION__" defer></script>
+  </body>
+</html>

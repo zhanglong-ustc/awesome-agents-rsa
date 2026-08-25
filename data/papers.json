@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "trainingMethodVocabulary": ["Training-free", "SFT", "RL", "OPD"],
+  "sections": [
+    {
+      "id": "recommender-systems",
+      "name": "Recommender Systems",
+      "kind": "papers",
+      "entries": [
+        {
+          "year": 2026,
+          "title": "ReasonRec: A Reasoning-Augmented Multimodal Agent for Unified Recommendation",
+          "paperUrl": "https://aclanthology.org/2026.findings-acl.391",
+          "venue": "ACL Findings 2026",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Multimodal", "CoT", "Tool Delegation", "Uncertainty"],
+          "description": "Observe→Deliberate→Act multimodal recommender agent: VLM encoding, reasoning-aware instruction tuning, and uncertainty-triggered tool delegation to a lightweight external recommender.",
+          "detailId": "2026.findings-acl.391",
+          "details": {
+            "abstractZh": "ReasonRec 提出了一种以 Observe→Deliberate→Act 为架构的多模态推荐 Agent：Observe 阶段用视觉语言模型对文本、图像和用户历史进行表征；Deliberate 阶段通过推理感知视觉指令微调和思维链做显式推理；Act 阶段依据不确定性判断是否将困难样本委派给轻量级传统推荐工具。在 sequential recommendation、direct recommendation、CTR prediction 和 explanation generation 四类任务及五个真实数据集上，相对强多模态基线在 HR@5、NDCG@5 等关键排序指标上的相对提升超过 30%。该工作将工具委派从固定流程改造为置信度/不确定性触发的自适应行为。",
+            "abstractEn": "ReasonRec builds a multimodal recommender agent with an Observe→Deliberate→Act architecture: Observe encodes text, images, and user history via VLM; Deliberate applies reasoning-aware visual instruction tuning with CoT for explicit reasoning; Act delegates uncertain hard samples to a lightweight external recommender tool based on confidence/uncertainty. Covering four task types and five real-world datasets, the approach reports over 30% relative improvement on key ranking metrics (HR@5, NDCG@5) compared to strong multimodal baselines, turning tool delegation from a fixed pipeline step into confidence-triggered adaptive behavior."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "MARS: Agentic Recommender System with Hierarchical Belief-State Memory",
+          "paperUrl": "https://arxiv.org/abs/2605.14401",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Memory", "Planning", "Belief State", "Long-horizon"],
+          "description": "Models recommendation as a partially observable problem; divides agent memory into event→preference→profile three-layer belief state with six explicit lifecycle operations managed by an LLM planner.",
+          "detailId": "2605.14401",
+          "details": {
+            "abstractZh": "MARS 将长期推荐建模为部分可观测问题，把 Agent 记忆显式划分为 event memory → preference memory → profile memory 三层 belief state，并由 LLM planner 决定何时执行提取、强化、弱化、整合、遗忘与重合成六类生命周期操作。在四个 InstructRec benchmark 领域上，相对最强基线平均 HR@1 +26.4%、NDCG@10 +10.3%，在偏好持续变化的设定下 agentic scheduling 还能带来额外收益。这一工作代表 2026 年的关键转向：记忆不再是简单追加历史，而是带有显式衰减、强化、遗忘与抽象层级的状态管理系统。",
+            "abstractEn": "MARS models long-horizon recommendation as a partially observable problem, explicitly dividing agent memory into event→preference→profile three-layer belief state. An LLM planner decides when to execute six lifecycle operations: extraction, reinforcement, weakening, consolidation, forgetting, and resynthesis. Across four InstructRec benchmark domains, it reports average HR@1 +26.4% and NDCG@10 +10.3% relative to the strongest baseline, with agentic scheduling yielding additional gains in preference-shift settings. This work represents a key 2026 shift: memory is no longer simple append-to-history but a state management system with explicit decay, reinforcement, forgetting, and abstraction layers."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "MemRec: Collaborative Memory-Augmented Agentic Recommender System",
+          "paperUrl": "https://arxiv.org/abs/2601.08816",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Collaborative Memory", "Multi-LM", "Graph", "Async Propagation"],
+          "description": "Reconstructs cross-user collaborative signals as a semantic memory graph; decouples memory management (lightweight LM_Mem) from reasoning and reranking (high-capability LLM_Rec) with asynchronous propagation.",
+          "detailId": "2601.08816",
+          "details": {
+            "abstractZh": "MemRec 将传统协同过滤的跨用户信号重构为协同语义记忆图，并把“”护记忆“”“”记忆推理推荐“”给不同语言模型：轻量 LM_Mem 负责检索、压缩和异步传播记忆，高能力 LLM_Rec 只接收已精炼的高信号上下文进行重排序，从而避免单一 Agent 同时吞下大量邻居历史再推理的开销。在 Books、Goodreads、MovieTV、Yelp 四个 benchmark 上，相比各数据集最强基线的 H@1 相对提升分别为 14.91%、28.98%、19.75%、15.77%，NDCG@5 相对提升约为 7.54%、11.51%、11.24%、7.59%，均具有统计显著性。",
+            "abstractEn": "MemRec reconstructs cross-user collaborative signals as a collaborative semantic memory graph and decouples memory management (lightweight LM_Mem handles retrieval, compression, and asynchronous propagation) from reasoning/reranking (high-capability LLM_Rec receives only curated high-signal context), avoiding the overhead of a monolithic agent processing all neighbor history. On Books, Goodreads, MovieTV, and Yelp, H@1 relative improvements vs strongest baseline are 14.91%, 28.98%, 19.75%, and 15.77%; NDCG@5 improvements are 7.54%, 11.51%, 11.24%, and 7.59%, all statistically significant."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "AgenticRec: Recommendation-Oriented Agentic Framework with Progressive Tool-Integrated Reasoning Optimization",
+          "paperUrl": "https://arxiv.org/abs/2603.21613",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["ReAct", "Tool Use", "Trajectory RL", "Ranking Reward"],
+          "description": "Embeds recommendation-specific tools in a ReAct-style loop; trajectory-level RL with ranking reward trains the entire reasoning→tool invocation→observation→ranking chain; Progressive Preference Refinement mines hard negatives from ranking violations.",
+          "detailId": "2603.21613",
+          "details": {
+            "abstractZh": "AgenticRec 将推荐专用工具嵌入 ReAct 式循环，并将最终排名奖励反向用于训练整条 reasoning → tool invocation → observation → ranking 轨迹，而非仅训练最后的排序 token。框架通过 recommendation-oriented trajectory optimization/RL 学习何时调用工具；Progressive Preference Refinement (PPR) 从排名违例中挖掘困难负样本以强化细粒度偏好边界。实验使用 Amazon Reviews 2023 的 CDs、Musical Instruments、Office Products、Video Games 四个子集，backbone 为 Qwen3-4B-Instruct-2507；在 20 个 dataset×metric 组合中的 19 个取得最优结果。关键 ablation 表明：未经训练的工具调用在部分数据上会引入噪声，经 trajectory-level RL 后工具集成 Agent 才稳定超越纯推理模型，说明工具使用策略的训练才是收益来源。",
+            "abstractEn": "AgenticRec embeds recommendation-specific tools in a ReAct-style loop and uses trajectory-level RL with ranking reward to train the full reasoning→tool invocation→observation→ranking trajectory rather than only the final ranking token. Progressive Preference Refinement (PPR) mines hard negatives from ranking violations to strengthen fine-grained preference boundaries. Experiments on four Amazon Reviews 2023 subsets (Qwen3-4B-Instruct-2507 backbone) achieve best results on 19 of 20 dataset×metric cells. Key ablation shows: untrained tool calls introduce noise on some datasets; only after trajectory-level RL does the tool-integrated agent consistently surpass pure-reasoning models, proving that training the tool-use policy — not merely providing tools — is the source of gains."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "TAIRA: Thought-Augmented Planning for LLM-Powered Interactive Recommender Agent",
+          "paperUrl": "https://arxiv.org/abs/2506.23485",
+          "venue": "arXiv 2025",
+          "resource": null,
+          "trainingMethods": ["SFT"],
+          "tags": ["Multi-Agent", "Planning", "Thought Distillation"],
+          "description": "Multi-agent interactive recommendation: a Manager Agent decomposes complex user intents into subtasks; Thought Pattern Distillation (TPD) extracts high-level thinking patterns from agent history and human expert experience to strengthen planning.",
+          "detailId": "2506.23485",
+          "details": {
+            "abstractZh": "TAIRA 是 2025 年正文中最直接的多 Agent 交互推荐路线之一：多 Agent 系统由 manager agent 解析复杂/含糊的用户意图、分解推荐任务并规划子任务，再通过 Thought Pattern Distillation (TPD) 从 Agent 历史经验和人类专家经验中抽取高层思维模式来强化规划。论文设计不同难度的用户仿真查询，在多个推荐数据集上测试；作者报告 TAIRA 对现有方法有显著优势，且请求越复杂，优势越明显，并能迁移到新的任务类型。",
+            "abstractEn": "TAIRA is one of the most direct multi-agent interactive recommendation approaches in 2025: a Manager Agent parses complex and ambiguous user intents, decomposes recommendation tasks into subtasks, and plans their execution; Thought Pattern Distillation (TPD) extracts high-level thinking patterns from agent history and human expert experience to strengthen planning. Experiments with user simulation queries of varying difficulty across multiple recommendation datasets show TAIRA significantly outperforms existing methods, with advantages growing with query complexity, and generalizing to new task types."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "ECPO: Expectation Confirmation Preference Optimization for Multi-Turn Conversational Recommendation Agent",
+          "paperUrl": "https://aclanthology.org/2025.findings-acl.307",
+          "venue": "ACL Findings 2025",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Multi-Turn CRA", "Planning", "Tool Use", "Preference Optimization"],
+          "description": "Refines multi-turn conversational recommendation preference optimization to turn-level expectation confirmation; introduces AILO user agent simulating Activities/Interests/Language/Orientations; avoids expensive conversation-tree sampling via Backward Expectation Derivation.",
+          "detailId": "2025.findings-acl.307",
+          "details": {
+            "abstractZh": "ECPO 把多轮对话推荐的偏好优化从“”条对话最终打分“”化到 turn-level expectation confirmation。CRA 本身使用可调 LLM，并利用 planning 与 tool-calling 在对话中进行偏好获取和外部 item retrieval；同时引入另一个 LLM 用户 Agent AILO，模拟用户 Activities、Interests、Language、Orientations，并对每轮回答执行 expectation confirmation。训练流程包括 Simulator-Guided Planning Tuning、Forward Expectation Confirmation、Backward Expectation Derivation 和 Preference Optimization，目的之一是避免传统多轮偏好优化在每个节点扩展大量对话树的采样开销。",
+            "abstractEn": "ECPO refines multi-turn conversational recommendation preference optimization from whole-conversation final scoring to turn-level expectation confirmation. The CRA uses a tunable LLM with planning and tool-calling for preference elicitation and external item retrieval; a second LLM user agent AILO simulates user Activities, Interests, Language, and Orientations and performs expectation confirmation per turn. The training pipeline — Simulator-Guided Planning Tuning, Forward Expectation Confirmation, Backward Expectation Derivation, and Preference Optimization — aims to avoid the expensive conversation-tree sampling overhead of traditional multi-turn preference optimization."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "PersonaX: A Recommendation Agent-Oriented User Modeling Framework for Long Behavior Sequence",
+          "paperUrl": "https://aclanthology.org/2025.findings-acl.300",
+          "venue": "ACL Findings 2025",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Persona", "Long-History", "Offline Cache", "Memory"],
+          "description": "Solves context-length and latency bottlenecks by offline-clustering long behavior sequences into multi-persona profiles cached for online agent retrieval; using only 30–50% of behaviors improves AgentCF by 3–11% and Agent4Rec by 10–50%.",
+          "detailId": "2025.findings-acl.300",
+          "details": {
+            "abstractZh": "PersonaX 用离线的多人格记忆/画像层解决长行为序列对推荐 Agent 的上下文长度、信息丢失和在线延迟问题。它先将完整行为聚类，再选择兼顾代表性与多样性的多段子行为序列，离线生成多个细粒度 persona 并缓存，线上 Agent 直接检索 persona 而不需每次实时重建 profile。在长度约 480 的行为序列上，仅使用 30%–50% 的行为数据，PersonaX 就能使 AgentCF 提升约 3%–11%，使 Agent4Rec 提升约 10%–50%。这说明 2025 年“”户画像 Agent 化“”重点已从简单摘要转向压缩、检索、缓存和多兴趣分解。",
+            "abstractEn": "PersonaX addresses context-length, information-loss, and online-latency bottlenecks for recommendation agents via an offline multi-persona memory/profile layer. It clusters full behavior sequences, selects representative and diverse sub-sequences, generates fine-grained personas offline and caches them; the online agent retrieves personas directly without real-time profile reconstruction. On sequences of ~480 length using only 30–50% of the behavior data, PersonaX improves AgentCF by ~3–11% and Agent4Rec by ~10–50%, demonstrating that 2025's 'user-profile agentification' focus has shifted from simple summarization to compression, retrieval, caching, and multi-interest decomposition."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "iAgent: LLM Agent as a Shield between User and Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2502.14662",
+          "venue": "ACL Findings 2025",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["User-Side Agent", "Dynamic Memory", "Reranking", "Platform-User"],
+          "description": "Places a user-side personal agent between user and platform; i²Agent adds instruction-aware parser and dynamic memory continuously reconstructing user profiles from feedback for reranking, achieving average +16.6% on ranking metrics vs EasyRec.",
+          "detailId": "2502.14662",
+          "details": {
+            "abstractZh": "iAgent 不再把 Agent 仅视为平台方的推荐增强模块，而是在用户与平台之间放入一个用户侧个人 Agent，由 Agent 解析用户指令、维护偏好并重新组织平台输出，形成 user–agent–platform 范式。增强版 i²Agent 引入 instruction-aware parser 与 dynamic memory，根据反馈持续重构用户 profile，再用于重排序；这一设计本质上把“”户画像“”静态 prompt 变成持续演化的 Agent state。在论文实验中，i²Agent 相比第二强基线 EasyRec，标准排名指标平均提升约 16.6%；作者还将 echo chamber 减弱、广告过滤、活跃/低活跃用户效用等纳入评价。",
+            "abstractEn": "iAgent reframes the agent's role from a platform-side recommendation enhancer to a user-side personal agent placed between user and platform, parsing user instructions, maintaining preferences, and reorganizing platform output in a user–agent–platform paradigm. The enhanced i²Agent adds an instruction-aware parser and dynamic memory that continuously reconstructs user profiles from feedback for reranking, transforming 'user profiles' from static prompts into continuously evolving agent state. i²Agent achieves average +16.6% on standard ranking metrics vs second-best baseline EasyRec; evaluation also covers echo chamber reduction, ad filtering, and active/low-activity user utility."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "T-PRA: Tunable LLM-based Proactive Recommendation Agent",
+          "paperUrl": "https://aclanthology.org/2025.acl-long.944",
+          "venue": "ACL 2025",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL", "OPD"],
+          "tags": ["Proactive Rec", "Actor-Advisor-Critic", "Long-horizon", "DPO"],
+          "description": "Reformulates proactive recommendation as long-horizon sequential decision and influence path planning; Actor–Advisor–Critic structure with multi-objective long-term reward and DPO-style agent tuning via preference optimization.",
+          "detailId": "2025.acl-long.944",
+          "details": {
+            "abstractZh": "T-PRA 把“”动推荐“”一次性 next-item prediction 改写为长期、序列化的决策与影响路径规划问题，让 LLM Agent 根据用户实时反馈不断调整动作。其 Actor–Advisor–Critic 式结构：Actor 负责推荐和决策，Advisor 辅助产生/修正 reasoning，Critic 根据多目标长期 reward 评价轨迹，并利用偏好优化进行 Agent tuning。该工作的重要性在于把推荐 Agent 明确推进到 long-horizon planning + feedback-driven policy tuning，是 2025 年主动推荐方向的代表性 ACL 长文。",
+            "abstractEn": "T-PRA reformulates proactive recommendation from one-shot next-item prediction to long-horizon sequential decision and influence path planning, enabling the LLM agent to continuously adjust actions based on real-time user feedback. Its Actor–Advisor–Critic structure has Actor handle recommendations and decisions, Advisor assist in generating/correcting reasoning, and Critic evaluate trajectories with multi-objective long-term reward; agent tuning uses preference optimization (DPO-style). The significance lies in explicitly advancing recommender agents to long-horizon planning + feedback-driven policy tuning, representing the 2025 ACL flagship work in proactive recommendation."
+          }
+        }
+      ]
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "kind": "papers",
+      "entries": [
+        {
+          "year": 2026,
+          "title": "LegalMALR: Multi-Agent Query Understanding and LLM-Based Reranking for Chinese Statute Retrieval",
+          "paperUrl": "https://arxiv.org/abs/2601.17692",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Multi-Agent", "Query Rewrite", "GRPO", "Reasoning Rerank", "Legal"],
+          "description": "Multi-agent system reformulates implicit legal queries from multiple perspectives with iterative dense retrieval; GRPO-optimized MAS policy reduces randomness; LLM Reranker applies natural-language legal reasoning for statute applicability judgment.",
+          "detailId": "2601.17692",
+          "details": {
+            "abstractZh": "LegalMALR 在一个系统中同时实现多 Agent query understanding 与 LLM reasoning reranker。前级 MAS 从不同法律视角对隐含、多问题、口语化 query 进行 reformulation，并迭代调用 dense retriever 扩充候选；统一 MAS policy 通过 GRPO 优化以降低多 Agent rewrite 的随机性，最后交给 LLM Reranker 用自然语言法律推理判断法条适用性。作者还构建了含 118 个困难中文法律查询的 CSAID，并与公开 STARD 一起评测；LegalMALR 在 ID 与 OOD 设置均显著超过强 RAG 基线。虽然场景是法条检索，但架构非常接近工业搜索未来的 'query-agent → retrieval → reasoning rerank' pipeline。",
+            "abstractEn": "LegalMALR implements multi-agent query understanding and LLM reasoning reranking in a single system. A front-end MAS reformulates implicit, multi-issue, colloquial queries from different legal perspectives and iteratively expands candidates with a dense retriever; a unified MAS policy optimized via GRPO reduces randomness in multi-agent rewriting; a final LLM Reranker applies natural-language legal reasoning for statute applicability judgment. The authors also build CSAID with 118 hard Chinese legal queries, evaluating alongside STARD; LegalMALR significantly outperforms strong RAG baselines on both ID and OOD settings. Though focused on statute retrieval, the architecture closely mirrors a future industrial 'query-agent → retrieval → reasoning rerank' pipeline."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "QAgent: A Modular Search Agent with Interactive Query Understanding",
+          "paperUrl": "https://arxiv.org/abs/2510.08383",
+          "venue": "arXiv 2025",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Query Understanding", "Multi-Step", "Retrieval RL", "Modular RAG"],
+          "description": "Transforms query understanding from one-shot rewrite into interactive reasoning↔retrieval multi-step decision; modular pluggable design allows the RL-trained query-understanding agent to be inserted into existing search pipelines without full replacement.",
+          "detailId": "2510.08383",
+          "details": {
+            "abstractZh": "QAgent 把 query understanding 从一次性 query rewrite 变为一个 interactive reasoning ↔ retrieval 的多步决策过程。它是模块化 agentic RAG：Agent 根据上一轮检索反馈决定下一步如何理解/重写查询，通过 RL 最大化检索质量，并特意设计成可插拔模块，使训练好的 query-understanding agent 能接入已有搜索/RAG 系统而不必整体替换线上 pipeline。论文报告其在 QA 和检索场景均优于比较系统，并强调相较 end-to-end agent，以检索为中心的 RL 在泛化与部署上更稳定。",
+            "abstractEn": "QAgent transforms query understanding from one-shot query rewrite into an interactive reasoning↔retrieval multi-step decision process. As a modular agentic RAG, the agent decides how to understand/rewrite the query based on the previous retrieval feedback; RL maximizes retrieval quality. The pluggable design allows the trained query-understanding agent to be inserted into existing search/RAG systems without full pipeline replacement. The paper reports improvements over comparison systems on both QA and retrieval scenarios, emphasizing that retrieval-focused RL is more stable in generalization and deployment than end-to-end agents."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "REARANK: Reasoning Re-ranking Agent via Reinforcement Learning",
+          "paperUrl": "https://arxiv.org/abs/2505.20046",
+          "venue": "arXiv 2025",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Listwise Rerank", "Reasoning", "Few-Shot", "BRIGHT"],
+          "description": "Upgrades LLM reranker to a 'reason first, then listwise rank' agent; RL trains reasoning/ranking policy from only 179 annotated samples; REARANK-7B surpasses GPT-4 on the reasoning-intensive BRIGHT benchmark.",
+          "detailId": "2505.20046",
+          "details": {
+            "abstractZh": "REARANK 将 LLM reranker 明确升级成一个“” reasoning、再 listwise ranking“” reranking agent，并用 RL 训练 reasoning/ranking policy。结合数据增强，仅依赖 179 个标注样本训练 Qwen2.5-7B 版本；其目标不是让大模型直接逐文档打分，而是在排序前形成可解释的判断轨迹。实验覆盖多个 in-domain / out-of-domain IR benchmark；REARANK-7B 总体达到接近 GPT-4 的 reranking 表现，并在推理密集的 BRIGHT benchmark 上超过 GPT-4。这是 2025 年“”gent × reranking“”最直接、最干净的一项工作。",
+            "abstractEn": "REARANK explicitly upgrades the LLM reranker into a 'reason first, then listwise rank' reranking agent, using RL to train the reasoning/ranking policy. With data augmentation, it trains a Qwen2.5-7B version from only 179 annotated samples; the goal is to form an interpretable judgment trajectory before sorting rather than having the model score documents one by one. Experiments cover multiple in-domain/out-of-domain IR benchmarks; REARANK-7B overall reaches near-GPT-4 reranking performance and surpasses GPT-4 on the reasoning-intensive BRIGHT benchmark. This is the most direct and clean 'Agent × reranking' work of 2025."
+          }
+        }
+      ]
+    },
+    {
+      "id": "advertising",
+      "name": "Advertising",
+      "kind": "papers",
+      "entries": [
+        {
+          "year": 2025,
+          "title": "KP-Agent: Keyword Pruning in Sponsored Search Advertising via LLM-Powered Contextual Bandits",
+          "paperUrl": "https://dl.acm.org/doi/10.1145/3746252.3760974",
+          "venue": "CIKM 2025",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Contextual Bandit", "Keyword Pruning", "Sponsored Search", "Campaign Control"],
+          "description": "Models sponsored-search keyword pruning as an LLM-powered contextual bandit agent operating at the campaign/keyword control layer, learning policy via reinforcement signal to progressively refine keyword sets without entering millisecond-level serving.",
+          "detailId": "cikm-2025-kp-agent",
+          "details": {
+            "abstractZh": "KP-Agent 把 sponsored search 中的 keyword pruning 建模为 LLM-powered contextual bandit Agent：Agent 在 advertiser context 下决定如何调整关键词集合，并通过 reinforcement signal 逐步改进策略，而不是只依赖静态 supervised pruning classifier。ACM 摘要描述其会生成代码/动作来细化 keyword set，并用 contextual-bandit formulation 处理决策。它的价值在于：广告 Agent 不一定直接生成广告，而可以位于 campaign/keyword control layer，根据收益反馈自动执行运营决策，从而避开毫秒级 serving hot path。",
+            "abstractEn": "KP-Agent models sponsored-search keyword pruning as an LLM-powered contextual bandit agent: the agent decides how to adjust keyword sets under advertiser context and improves strategy progressively via reinforcement signal rather than relying solely on a static supervised pruning classifier. The ACM abstract describes it generating code/actions to refine keyword sets using a contextual-bandit formulation. Its value is that an ad agent need not directly generate ads but can operate at the campaign/keyword control layer, automatically executing operational decisions based on reward feedback, avoiding the millisecond-level serving hot path."
+          }
+        }
+      ]
+    },
+    {
+      "id": "industry-deployments",
+      "name": "Industry Deployments",
+      "kind": "papers",
+      "entries": [
+        {
+          "year": 2026,
+          "title": "STEPS: A Self-Triggered Agentic Push Recommendation System",
+          "paperUrl": "https://arxiv.org/abs/2608.01949",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Production Deployed", "Push Rec", "Self-Triggered", "Long-horizon", "1B+ Users"],
+          "description": "Self-triggered push recommendation deployed to 1B+ Douyin users: Planning Agent decides next wake time via gated ordinal regression; Execution Agent decides send/no-send via trajectory reward; Filtering Agent cuts compute by 79.42%; results: active days +0.28%, disable rate -1.91%.",
+          "detailId": "2608.01949",
+          "details": {
+            "abstractZh": "STEPS 将 push recommendation 的决策从“”定时间 scheduler 调一个模型“”级成 Agent 自己决定 whether to send + when to wake itself up again 的 self-triggered 闭环。Planning Agent 通过 gated ordinal regression 预测下一次系统调用时间，Execution Agent 根据轨迹奖励决定是否发 push，Filtering Agent 控制计算量并阻止不合理规划。线上 A/B 结果：用户 active days +0.2843%，push permission disable rate -1.9089%，Filtering Agent 将计算开销降低 79.42%。系统已在超过 10 亿用户规模的抖音全量部署，是“”荐 Agent 从 item ranking 走向自主时间规划“”一个强工业实例。",
+            "abstractEn": "STEPS upgrades push recommendation from 'fixed-schedule model call' to a self-triggered closed loop where the agent decides both whether to send and when to wake itself up next. Planning Agent predicts next system invocation time via gated ordinal regression; Execution Agent decides send/no-send via trajectory reward; Filtering Agent controls compute and blocks unreasonable plans. Online A/B results: user active days +0.2843%, push permission disable rate -1.9089%, Filtering Agent reduces computation overhead by 79.42%. Deployed to 1B+ Douyin users — a strong industry instance of 'recommendation agents moving from item ranking to autonomous time planning'."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "SR-Agent: Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerce Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2607.17719",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Production Deployed", "Post-Ranking", "Multi-Agent", "Constrained Actions", "Reward Gate"],
+          "description": "Automates Kuaishou e-commerce post-ranking inspection/diagnosis/tuning: UserSim Agent finds bad cases, Analysis Agent compresses into structured diagnosis, Strategy Harness enforces bounded actions with multi-stage reward gates; 1-month A/B: orders +0.71%, depth +0.34%, diversity +0.48%.",
+          "detailId": "2607.17719",
+          "details": {
+            "abstractZh": "SR-Agent 把 post-ranking 中原本靠人工巡检、诊断和改参数的流程改造成可回滚的 Agent loop。UserSim Agent 使用分阶段 inspection skill 找用户体验 bad cases；Analysis Agent 将重复 bad cases 压缩为结构化 diagnosis；随后 Strategy Refinement Harness 只允许 Agent 在 typed、bounded action space 内调整策略，并通过多阶段 reward gate 验证后才能上线。在快手电商一个月线上 A/B 中报告：订单量 +0.71%、浏览深度 +0.34%、点击品类多样性 +0.48%。这是目前公开材料中少数同时具备多 Agent、生产部署、可逆动作、真实 A/B uplift 的推荐 Agent 案例。",
+            "abstractEn": "SR-Agent transforms the Kuaishou e-commerce post-ranking workflow — previously reliant on manual inspection, diagnosis, and parameter tuning — into a rollback-capable agent loop. UserSim Agent finds user-experience bad cases via staged inspection skills; Analysis Agent compresses repeated bad cases into structured diagnoses; the Strategy Refinement Harness then allows the agent to adjust strategies only within a typed, bounded action space, verified by multi-stage reward gates before deployment. One-month online A/B on Kuaishou E-Commerce: orders +0.71%, browsing depth +0.34%, click category diversity +0.48%. This is one of the few publicly documented cases combining multi-agent architecture, production deployment, reversible actions, and real A/B uplift."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "AgentX: Towards Agent-Driven Self-Iteration of Industrial Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2606.26859",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Production Deployed", "Self-Iteration", "Multi-Agent", "SGPO", "A/B Loop"],
+          "description": "Multi-agent system automating algorithm iteration at Kuaishou: Brainstorm/Developing/Evaluation agents cover hypothesis→code→A/B→attribution; SGPO converts execution trajectories into semantic-gradient experience for harness self-improvement.",
+          "detailId": "2606.26859",
+          "details": {
+            "abstractZh": "AgentX 不是“”用户推荐 item 的 Agent“”而是一个替推荐算法工程团队持续做算法实验的多 Agent 自迭代系统。Brainstorm Agent 从历史实验、架构、数据分析和外部研究中生成并排序可实施 ideas；Developing Agent 做 repository-grounded production code modification 与可靠性验证；Evaluation Agent 管理安全线上 rollout 和 A/B 判断；最后由 Harness Evolution/SGPO 将成功和失败的 execution trajectories 转为 semantic-gradient 式经验，让整个 Agent harness 继续自我改进。系统已 production-deployed，实现从 hypothesis → code → online experiment → attribution → knowledge accumulation 的闭环自动化。",
+            "abstractEn": "AgentX is not an agent that recommends items to users but a multi-agent self-iteration system that continuously runs algorithm experiments on behalf of recommendation engineering teams. Brainstorm Agent generates and ranks actionable ideas from history, architecture, data analysis, and external research; Developing Agent performs repository-grounded production code modification and reliability verification; Evaluation Agent manages safe online rollout and A/B judgment; SGPO (Semantic Gradient Policy Optimization) converts successful and failed execution trajectories into semantic-gradient experience for continued harness self-improvement. The system is production-deployed, automating the full hypothesis→code→online experiment→attribution→knowledge accumulation loop."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "LEAPS: An LLM-Empowered Adaptive Plugin for Taobao AI Search",
+          "paperUrl": "https://arxiv.org/abs/2601.05513",
+          "venue": "arXiv 2026",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Production Deployed", "Query Expansion", "Relevance Verification", "Non-invasive Plugin"],
+          "description": "Broaden-and-Refine agentic plugin at both ends of Taobao AI Search pipeline: upstream Query Expander (diversity-aware RL) generates complementary queries; downstream Relevance Verifier (OCT + CoT reasoning) filters noise. Fully deployed since Aug 2025, serving hundreds of millions monthly.",
+          "detailId": "2601.05513",
+          "details": {
+            "abstractZh": "LEAPS 没有推倒传统电商搜索系统，而是在 pipeline 两端增加 Broaden-and-Refine Agentic Plugin。上游 Query Expander 是 intent translator，通过 inverse data augmentation、posterior-knowledge SFT 与 diversity-aware RL 生成互补 query 组合，扩大候选集合；下游 Relevance Verifier 汇总 OCR、review 等多源信息，并用 CoT reasoning 过滤 expansion 带来的噪声。离线与在线 A/B 均有显著改进，同时对原有短 query 检索性能非侵入。自 2025 年 8 月起已在淘宝 AI Search 全量部署，月服务数亿用户。这个架构很值得工业团队借鉴：Agent 不一定取代检索/排序，而可以在 recall 前扩展 + rank 后验证。",
+            "abstractEn": "LEAPS adds a Broaden-and-Refine Agentic Plugin at both ends of the traditional e-commerce search pipeline without replacing it. The upstream Query Expander (inverse data augmentation + posterior-knowledge SFT + diversity-aware RL) generates complementary query combinations to expand candidates; the downstream Relevance Verifier aggregates OCR, reviews, and other multi-source information, using CoT reasoning to filter expansion noise. Significant improvements in both offline and online A/B, with no invasion of existing short-query retrieval performance. Fully deployed on Taobao AI Search since August 2025, serving hundreds of millions monthly. An architecture worth emulating: agents can expand before recall and verify after ranking rather than replacing retrieval/ranking."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "SIRA: Superintelligent Retrieval Agent — The Next Frontier of Agentic Retrieval",
+          "paperUrl": "https://ai.meta.com/research/publications/superintelligent-retrieval-agent/",
+          "venue": "Meta Research 2026",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Corpus-Aware", "Sparse Retrieval", "Evidence Terms", "Tool Use"],
+          "description": "Compresses multi-round exploratory search into one corpus-discriminative retrieval action: offline document enrichment, query-side evidence-term prediction using corpus statistics as tool calls; BrowseComp-Wikipedia Recall@1/10/100 = 9.70%/15.27%/36.14% over 25.6M docs.",
+          "detailId": "meta-sira-2026",
+          "details": {
+            "abstractZh": "SIRA 的目标不是让大模型进行越来越多轮 web search，而是把多轮探索性搜索所获得的“” corpus 的理解“”缩成一次 corpus-discriminative retrieval action。系统先离线 enrichment 文档、补充缺失词汇；query 侧 Agent 预测潜在 evidence terms，并将 corpus statistics 当作 tool calls 过滤/赋权词项，最后以 weighted sparse retrieval 完成检索。在 10 个 BEIR benchmark 上取得比较系统中最高平均检索表现之一；在 BrowseComp-Wikipedia 的 232 个查询、25,587,229 篇文档设置下，Recall@1/10/100 分别达到 9.70% / 15.27% / 36.14%，并在不同 search budget 下超过对比的多轮搜索 Agent。",
+            "abstractEn": "SIRA aims not to have large models perform more and more rounds of web search, but to compress the 'understanding of the corpus' acquired through multi-round exploratory search into one corpus-discriminative retrieval action. The system first enriches documents offline and supplements missing vocabulary; the query-side agent predicts potential evidence terms and uses corpus statistics as tool calls to filter/weight terms, completing retrieval via weighted sparse retrieval. Achieves one of the highest average retrieval performances among comparison systems across 10 BEIR benchmarks; on BrowseComp-Wikipedia (232 queries, 25,587,229 documents): Recall@1/10/100 = 9.70%/15.27%/36.14%, outperforming multi-round search agents at various search budgets."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "PaSa: An LLM Agent for Comprehensive Academic Paper Search",
+          "paperUrl": "https://arxiv.org/abs/2501.10120",
+          "venue": "arXiv 2025",
+          "resource": {
+            "label": "Code",
+            "url": "https://github.com/bytedance/PaSa"
+          },
+          "trainingMethods": ["RL"],
+          "tags": ["Academic Search", "Tool Use", "Citation Chain", "Search Policy"],
+          "description": "Full search agent continuously calling search tools, reading papers, following citation chains, judging relevance; RL-trained on 35K synthetic queries. PaSa-7B: Recall@20 +37.78%, Recall@50 +39.90% vs Google+GPT-4o paraphrasing.",
+          "detailId": "2501.10120",
+          "details": {
+            "abstractZh": "PaSa 是完整的 search agent，而不是 RAG query wrapper：Agent 可以连续调用搜索工具、阅读论文、沿引用关系继续探索、判断相关性并选择最终文献集；训练使用 3.5 万条 synthetic academic queries 构成的 AutoScholarQuery，并用 RL 优化搜索决策。在真实查询 benchmark RealScholarQuery 上，PaSa-7B 相对最强 Google-based baseline（Google + GPT-4o query paraphrasing）Recall@20 +37.78%、Recall@50 +39.90%；相比直接用 GPT-4o 实现 PaSa pipeline，recall 提升 30.36%、precision 提升 4.25%。虽然是学术搜索而非电商搜索，但很好地验证了“”模型 + 专门训练的 search policy 可以胜过更大的通用模型 + 搜索工具“”",
+            "abstractEn": "PaSa is a complete search agent rather than a RAG query wrapper: the agent continuously calls search tools, reads papers, follows citation chains, judges relevance, and selects the final document set. Trained on 35K synthetic AutoScholarQuery examples with RL-optimized search decision policy. On RealScholarQuery benchmark, PaSa-7B outperforms the strongest Google-based baseline (Google + GPT-4o query paraphrasing) by Recall@20 +37.78% and Recall@50 +39.90%, and surpasses the GPT-4o-based PaSa pipeline by +30.36% recall and +4.25% precision. Though focused on academic search, it well validates that 'a small model with a specially trained search policy can outperform larger general models + search tools'."
+          }
+        },
+        {
+          "year": 2025,
+          "title": "MAAQR: An LLM-based Multi-Agent Framework for Adaptive Query Rewriting in Alipay Search",
+          "paperUrl": "https://dl.acm.org/doi/10.1145/3726302.3731950",
+          "venue": "SIGIR 2025",
+          "resource": null,
+          "trainingMethods": ["SFT"],
+          "tags": ["Production Deployed", "Query Rewriting", "Multi-Agent", "Online A/B"],
+          "description": "Splits Alipay search query rewriting into multi-agent adaptive decision for complex QA and few-recall queries; inserted into existing pipeline without replacement; significant CTR and transaction number improvements in online A/B.",
+          "detailId": "sigir-2025-maaqr",
+          "details": {
+            "abstractZh": "MAAQR 在 Alipay 搜索中将 query rewriting 拆成 multi-agent adaptive decision，而不是让一个 LLM 始终执行同一种改写策略。其目标是针对复杂问答型 query、few-recall query 等不同输入自动生成更合适的 rewrite，并接入已有搜索链路。ACM 官方摘要明确指出，通过 offline experiment 和线上 A/B，MAAQR 显著提升目标 query 的 CTR 与 transaction 数量。这是 2025 顶会中最符合“” Agent + query understanding/rewrite + 真实线上搜索“”件的工业论文之一。",
+            "abstractEn": "MAAQR splits Alipay search query rewriting into multi-agent adaptive decision rather than having a single LLM always execute the same rewriting strategy. It targets different input types — complex QA queries, few-recall queries, etc. — generating more appropriate rewrites and integrating into the existing search pipeline. The ACM abstract explicitly states that MAAQR significantly improves CTR and transaction numbers for target queries, confirmed by offline experiments and online A/B tests. This is one of the most qualified industry papers in 2025 top venues meeting the criteria of 'multi-agent + query understanding/rewrite + real online search'."
+          }
+        }
+      ]
+    }
+  ]
+}
