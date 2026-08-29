@@ -9,6 +9,46 @@
       "entries": [
         {
           "year": 2026,
+          "title": "When Memory Takes Gradients: Collaborative Vector Memory for Agentic Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2608.26895",
+          "venue": "arXiv 2026",
+          "authors": ["Hanchong Chen", "Xing Tang", "Lingjie Li", "Xiongfeng Shan", "Xiuqiang He"],
+          "institutions": ["Shenzhen Technology University"],
+          "firstPublished": "2026-08-27",
+          "arxivId": "2608.26895",
+          "doi": "10.48550/arXiv.2608.26895",
+          "resource": null,
+          "trainingMethods": ["SFT"],
+          "tags": ["Vector Memory", "Candidate Retrieval", "Collaborative Signals", "Long-History"],
+          "description": "CoVeMem stores frozen LightGCN user/item states as persistent collaborative memory, retrieves candidate-conditioned history into LLM soft tokens, and trains a parametric reader with semantic alignment and masked listwise ranking.",
+          "detailId": "2608.26895",
+          "details": {
+            "abstractZh": "CoVeMem 将推荐 Agent 的协同记忆从反复改写的文本叙事改造成可训练的向量状态库：冻结的 LightGCN 用户/物品状态保存全量协同结构，候选集合在每次决策时检索最相关的历史状态，并以 soft token 注入 Qwen2.5-7B-Instruct。语义锚点对齐、候选遮蔽与 listwise co-training 迫使 LoRA+projector 记忆读取器真正使用协同信号，而不是只看标题。实验覆盖 InstructRec 的 Books、Goodreads、MovieTV、Yelp 四个域，按 H@1/3/5 与 NDCG@3/5 评测；CoVeMem 在 20 个指标单元中的 19 个不低于最强文本记忆 Agent MemRec，且除一次静态画像外不再需要逐交互 LLM 记忆维护调用。",
+            "abstractEn": "CoVeMem replaces repeatedly rewritten textual agent memory with a trainable collaborative vector bank: frozen LightGCN user/item states retain catalog-wide structure, while each candidate set retrieves the most relevant history and injects it as soft tokens into Qwen2.5-7B-Instruct. Semantic-anchor alignment, candidate masking, and listwise co-training force the LoRA-plus-projector reader to use collaborative evidence rather than titles alone. On the four InstructRec domains (Books, Goodreads, MovieTV, and Yelp), evaluated with H@1/3/5 and NDCG@3/5, CoVeMem matches or exceeds the strongest text-memory agent MemRec on 19 of 20 metric cells while requiring no per-interaction LLM calls for memory maintenance beyond one static profile."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Personalized Communication Skills for Agentic Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2608.08417",
+          "venue": "arXiv 2026",
+          "authors": ["Zongwei Wang", "Min Gao", "Guangyu Hu", "Xinyi Gao", "Junliang Yu"],
+          "institutions": ["Chongqing University", "The University of Queensland"],
+          "firstPublished": "2026-08-09",
+          "arxivId": "2608.08417",
+          "doi": "10.48550/arXiv.2608.08417",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "Skill Routing", "Reflection", "User Modeling"],
+          "description": "AgentCom routes target-user and advisor agents through a reusable why–what–how–who communication skill bank, then evolves the bank from failed interactions to repair missing preference evidence.",
+          "detailId": "2608.08417",
+          "details": {
+            "abstractZh": "AgentCom 针对 UserAgent 仅依赖个人有限历史导致的视角收窄，引入目标用户 Agent 与顾问用户 Agent 的个性化协作。共享技能库按 why–what–how–who 四层描述何时需要沟通、询问什么、采用何种协议以及选择谁，并通过个性化技能路由组织通信路径，再从失败交互中演化新技能。实验在 LastFM、Epinions、LibraryThing 上覆盖 SASRec、GBSR、AFL、iAgent、MemRec；加入 AgentCom 后所有 backbone 的 Hit@1 均提升，其中 MemRec 的相对提升分别为 1.8%、2.4% 和 8.4%。",
+            "abstractEn": "AgentCom addresses perspective narrowing in UserAgents by coordinating a target-user agent with advisor-user agents. Its shared why–what–how–who bank represents when communication is needed, what evidence to seek, how to interact, and whom to consult; personalized routing assembles a path, while failed interactions evolve reusable skills. Experiments on LastFM, Epinions, and LibraryThing cover SASRec, GBSR, AFL, iAgent, and MemRec; AgentCom improves Hit@1 for every backbone, including relative MemRec gains of 1.8%, 2.4%, and 8.4%."
+          }
+        },
+        {
+          "year": 2026,
           "title": "ReasonRec: A Reasoning-Augmented Multimodal Agent for Unified Recommendation",
           "paperUrl": "https://aclanthology.org/2026.findings-acl.391",
           "venue": "ACL Findings 2026",
@@ -151,6 +191,46 @@
       "entries": [
         {
           "year": 2026,
+          "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+          "paperUrl": "https://arxiv.org/abs/2608.24794",
+          "venue": "arXiv 2026",
+          "authors": ["Boyang Liu", "Senjie Jin", "Peixin Wang", "Zhangyue Yin", "Yibo Wang", "Yuhao Zhou", "Xinbing Liang", "Shizheng Zhu", "Yuhui Wang", "Jingqi Tong", "Zhiheng Xi", "Jiazheng Zhang", "Clive Bai", "Clarenceai", "Blaze Chen", "Tao Gui", "Qi Zhang", "Xuanjing Huang"],
+          "institutions": ["Fudan University", "LLM Department, Tencent"],
+          "firstPublished": "2026-08-25",
+          "arxivId": "2608.24794",
+          "doi": "10.48550/arXiv.2608.24794",
+          "resource": null,
+          "trainingMethods": ["RL", "OPD"],
+          "tags": ["Iterative Search", "Reflection", "Critic", "Trajectory Feedback"],
+          "description": "A shared-parameter model alternates between search-agent and critic roles; online RL learns when feedback is worth requesting and how to use it, while rollout-matched preference optimization makes the critic co-evolve with the policy.",
+          "detailId": "2608.24794",
+          "details": {
+            "abstractZh": "CAFE 把搜索 Agent 与反馈 Critic 视为必须共同演化的两个角色，并由同一参数模型交替承担。在线阶段用 call–skip 成功差估计反馈价值，并对反馈前后的 token advantage 分段整形；离线阶段从匹配的成功/失败 rollout 中学习纠正性反馈偏好，使 Critic 随 Agent 错误分布变化。方法只在 2WikiMultihopQA 上训练，并在 HotpotQA、MuSiQue、PopQA、Bamboogle、Natural Questions、TriviaQA 六个域外基准验证；完整配置的七基准平均 EM/F1 达 51.9/60.3，优于相同初始化与预算的 49.7/58.0。",
+            "abstractEn": "CAFE treats the search agent and feedback critic as two roles that must co-evolve, alternating them within one shared-parameter model. Online training estimates feedback value from a call-versus-skip success gap and shapes token advantages before and after feedback; offline matched successful/failed rollouts train corrective preferences as the policy's failure distribution changes. Trained only on 2WikiMultihopQA and tested on six out-of-domain benchmarks, the full configuration reaches 51.9 average EM and 60.3 F1 across seven benchmarks, versus 49.7/58.0 under the same initialization and budget."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
+          "paperUrl": "https://arxiv.org/abs/2608.10676",
+          "venue": "arXiv 2026",
+          "authors": ["Aijun Yang", "Qianxue Guo", "Ziyi Huang", "Yuxuan Chen", "Shiyou Qian", "Jian Cao"],
+          "institutions": ["Shanghai Jiao Tong University"],
+          "firstPublished": "2026-08-11",
+          "arxivId": "2608.10676",
+          "doi": "10.48550/arXiv.2608.10676",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Tree Memory", "Reflection", "Error Recovery", "Long-Horizon"],
+          "description": "ReTree stores source-linked evidence and revision history in a bounded tree; contradictions trigger traceback, evidence replacement, summary regeneration, branch pruning, and resumed search.",
+          "detailId": "2608.10676",
+          "details": {
+            "abstractZh": "ReTree 为长程搜索 Agent 构建有来源链接的树状记忆，每个节点保存受限摘要、证据与修订历史，从而避免完整轨迹导致的上下文无限增长。当新证据否定旧结论时，系统回溯到该结论的引入节点，替换过期证据、重生成摘要、剪除受影响分支，再从修复后的状态继续搜索，形成显式 reflection/error-recovery 闭环。论文在 Bamboogle、FRAMES、2Wiki 和 HotpotQA 共 2,149 个问题上用 Qwen3-8B 评测，相对 Full-Trajectory ReAct 的回答准确率最高提升 25.6 个百分点，同时把平均最大单步推理上下文控制在后者的约 66%–79%。",
+            "abstractEn": "ReTree gives long-horizon search agents a source-linked tree memory whose nodes retain bounded summaries, evidence, and revision history, avoiding unbounded full-trajectory context. When new evidence contradicts an earlier claim, the agent traces the claim to its origin, replaces stale evidence, regenerates summaries, prunes affected branches, and resumes search from the repaired state—an explicit reflection and error-recovery loop. With Qwen3-8B on 2,149 questions from Bamboogle, FRAMES, 2Wiki, and HotpotQA, ReTree improves answer accuracy over Full-Trajectory ReAct by up to 25.6 percentage points while limiting average maximum per-step reasoning context to roughly 66–79% of the baseline."
+          }
+        },
+        {
+          "year": 2026,
           "title": "LegalMALR: Multi-Agent Query Understanding and LLM-Based Reranking for Chinese Statute Retrieval",
           "paperUrl": "https://arxiv.org/abs/2601.17692",
           "venue": "arXiv 2026",
@@ -202,6 +282,46 @@
       "kind": "papers",
       "entries": [
         {
+          "year": 2026,
+          "title": "Beyond Single-Episode Optimization: Sliding-Window Aware Generative Auto-Bidding for Long-Term Advertising Effectiveness",
+          "paperUrl": "https://arxiv.org/abs/2607.25233",
+          "venue": "arXiv 2026",
+          "authors": ["Binglin Wu", "Chuan Yue", "Yingyi Zhang", "Xianneng Li", "Ruyue Deng", "Weiru Zhang", "Xiaoyi Zeng"],
+          "institutions": ["Dalian University of Technology", "City University of Hong Kong", "Alibaba International Digital Commerce Group"],
+          "firstPublished": "2026-07-28",
+          "arxivId": "2607.25233",
+          "doi": "10.48550/arXiv.2607.25233",
+          "resource": null,
+          "trainingMethods": ["SFT"],
+          "tags": ["Auto-Bidding", "Hierarchical Planning", "MPC", "Long-Horizon"],
+          "description": "SWAG-Bid couples an episode-level masked-trajectory planner with a step-level gated Decision Transformer to optimize every overlapping seven-day efficiency window rather than treating each day independently.",
+          "detailId": "2607.25233",
+          "details": {
+            "abstractZh": "SWAG-Bid 将广告自动竞价从单日 episode 扩展到七日滑动窗口约束下的跨 episode 长程规划。上层 Masked Trajectory Model 预测未来市场并生成候选计划，Multi-Window MPC Sampling 同时评估所有重叠窗口；下层 Decision Transformer 通过 PSG-AdaLN 状态门控以及 RTG/CTG 双通道执行逐步竞价。除 AuctionNet-Sparse 离线实验外，AliExpress 进行了连续 21 天、10% 流量的 campaign 级 A/B：平均 cost +1.96%、GMV +3.42%、ROAS +5.65%，窗口约束达成率 +2.02 个百分点。",
+            "abstractEn": "SWAG-Bid extends auto-bidding from independent daily episodes to long-horizon planning under overlapping seven-day efficiency windows. An upper Masked Trajectory Model forecasts markets and generates candidate plans scored jointly by Multi-Window MPC Sampling; a lower Decision Transformer executes bids through PSG-AdaLN state-adaptive gating and RTG/CTG channels. Besides AuctionNet-Sparse experiments, a 21-day AliExpress campaign-level A/B test on 10% traffic reports cost +1.96%, GMV +3.42%, ROAS +5.65%, and constraint achievement +2.02 percentage points."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "HOBA: Hierarchical On-Policy Bidding Agents for Adaptive Online Advertising",
+          "paperUrl": "https://arxiv.org/abs/2607.24779",
+          "venue": "KDD 2026",
+          "authors": ["Ji Wu", "Yunshan Peng", "Wentao Bai", "Yunke Bai", "Wenzheng Shu", "Jinan Pang", "Yanxiang Zeng", "Xialong Liu"],
+          "institutions": ["Kuaishou Technology"],
+          "firstPublished": "2026-06-17",
+          "arxivId": "2607.24779",
+          "doi": "10.1145/3770855.3818435",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Auto-Bidding", "Reflection", "Memory", "Multi-Agent"],
+          "description": "Three-time-scale bidding control combines an LLM Think–Act–Observe–Reflect strategist with memory retrieval, a causal-adjusted SARSA expert selector, and a dynamic PID/MPC/IQL/Decision-Transformer expert pool.",
+          "detailId": "2607.24779",
+          "details": {
+            "abstractZh": "HOBA 是 Kuaishou 的三时间尺度分层竞价 Agent：高层 LLM 通过 Think–Act–Observe–Reflect 与历史经验检索推断超参数，中层 SARSA Agent 在带因果校正的反馈下选择专家，底层 PID、MPC、IQL、Decision Transformer 专家池执行实时竞价。AuctionNet 消融显示去掉 SARSA、LLM、记忆检索分别使分数下降 10.7%、7.1%、3.6%，在线 P99 延迟为 38 ms。4,982 个 campaign 的大规模 A/B 中，目标成本达成率由 90.0% 升至 93.2%，conversion value +8.1%、ROI +3.3%、预算完成率 +3.8%、广告主满意度 +7.6%。",
+            "abstractEn": "HOBA is Kuaishou's three-time-scale hierarchical bidding agent: a high-level LLM uses Think–Act–Observe–Reflect with experience retrieval to infer hyperparameters, a causal-adjusted SARSA agent selects experts, and a PID/MPC/IQL/Decision-Transformer pool executes real-time bids. AuctionNet ablations show score drops of 10.7%, 7.1%, and 3.6% without SARSA, the LLM, and memory retrieval, respectively; online P99 latency is 38 ms. In a large A/B test over 4,982 campaigns, target-cost achievement rises from 90.0% to 93.2%, with conversion value +8.1%, ROI +3.3%, budget completion +3.8%, and advertiser satisfaction +7.6%."
+          }
+        },
+        {
           "year": 2025,
           "title": "KP-Agent: Keyword Pruning in Sponsored Search Advertising via LLM-Powered Contextual Bandits",
           "paperUrl": "https://dl.acm.org/doi/10.1145/3746252.3760974",
@@ -223,6 +343,26 @@
       "name": "Industry Deployments",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "Shape Your Feed: An LLM-based Agentic System for Conversational Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2608.06632",
+          "venue": "RecSys 2026 Industrial Track",
+          "authors": ["Ziyun Xu", "Bosen Ding", "Yue Zhang", "Ji Qi", "Qingyuan Song", "Jizhou Huang", "Liwei Wang", "Jeffrey Santelli", "Yue Weng", "Qichao Que", "Zhenheng Yang", "Junfeng Pan", "Linhong Zhu"],
+          "institutions": ["Meta Platforms"],
+          "firstPublished": "2026-08-06",
+          "arxivId": "2608.06632",
+          "doi": "10.48550/arXiv.2608.06632",
+          "resource": null,
+          "trainingMethods": ["SFT", "OPD"],
+          "tags": ["Production Deployed", "Conversational Rec", "Memory", "Multimodal Control"],
+          "description": "Meta's three-flow system turns text, voice, and UI feedback into a persistent semantic profile, performs production-grounded agentic reranking/pruning, and self-evolves offline with SFT+DPO and judge ensembles.",
+          "detailId": "2608.06632",
+          "details": {
+            "abstractZh": "Shape Your Feed（SYF）是 Meta 面向生产 Feed 的可对话、可操控推荐系统。Perception Flow 统一文本、语音与 UI 意图，Serving Flow 读取持续演化的 Semantic Profile 对候选做实时剪枝和重排，Self-Evolution Flow 则在离线使用 SFT、DPO 与 LLM-as-a-Judge ensemble 更新策略，构成用户反馈—状态—排序闭环。离线对齐模块 SFT+DPO 的 accuracy/F1 为 98.85%/79.51%；覆盖美国/加拿大成年用户、持续数月的生产 A/B 中，post dismiss rate -1.70%、dislike rate -2.74%、新兴趣消费 +0.16%，关键路径延迟仅增加 0.043%。",
+            "abstractEn": "Shape Your Feed (SYF) is Meta's production conversational and steerable feed recommender. A Perception Flow unifies text, voice, and UI intent; a Serving Flow reads a persistent evolving Semantic Profile to prune and rerank candidates; and an offline Self-Evolution Flow applies SFT, DPO, and an LLM-as-a-Judge ensemble, closing the user-feedback–state–ranking loop. Its SFT+DPO alignment module reaches 98.85% accuracy and 79.51% F1; a multi-month production A/B test on adult US/Canada traffic reports post dismiss rate −1.70%, dislike rate −2.74%, new-interest consumption +0.16%, and only +0.043% critical-path latency."
+          }
+        },
         {
           "year": 2026,
           "title": "STEPS: A Self-Triggered Agentic Push Recommendation System",

@@ -76,13 +76,13 @@ The following works were published **before January 2025** and are listed as bac
 
 **2025 main line:** LLM as recommendation interaction decision layer — proactive recommendation emphasizes long-horizon feedback (T-PRA), user-side state and profile (iAgent, PersonaX), multi-turn dialogue and multi-agent planning (ECPO, TAIRA).
 
-**2026 shift:** Agent post-training + structured memory + active tool use — AgenticRec directly optimizes tool-use trajectory via RL; MemRec/MARS structure long-term memory with lifecycle management; ReasonRec lets the model autonomously decide when to invoke tools based on uncertainty.
+**2026 shift:** Agent post-training + structured memory + active tool use — AgenticRec directly optimizes tool-use trajectory via RL; MemRec/MARS structure long-term memory with lifecycle management; CoVeMem makes collaborative memory differentiable and candidate-retrievable. AgentCom further turns cross-user collaboration into routed, failure-evolving communication skills. ReasonRec and industrial systems such as SYF make tool/state use conditional on uncertainty or explicit user control rather than a fixed pipeline.
 
 ### Three Clear Trends
 
-1. **Recommendation agents**: From "LLM as decision-maker" → "stateful, trainable, tool-using long-horizon decision systems"
-2. **Search agents**: Core moves beyond "LLM rewrites query" → closed loop of query understanding + iterative retrieval + corpus feedback + reasoning rerank, with RL directly optimizing retrieval/ranking reward
-3. **Industrial systems**: "Agent on the control plane, proven models on the data plane" — Agent for strategy iteration, query expansion, push scheduling; traditional high-throughput models continue large-scale candidate generation and low-latency scoring
+1. **Recommendation agents**: The center of gravity has moved from one-shot LLM ranking to persistent state, trainable memory readers, and explicit user/agent interaction. CoVeMem shows that collaborative memory can preserve catalog-wide geometry and be optimized by ranking gradients, while AgentCom uses advisor agents and failure-driven skill evolution to repair narrow user views. SYF demonstrates the industrial version of this shift: multimodal user commands update a persistent semantic profile that directly controls pruning and reranking.
+2. **Search agents**: Search is becoming a trajectory-control problem rather than a query-rewrite module. CAFE jointly evolves a retrieval policy and its in-trajectory critic, while ReTree makes contradiction repair an explicit tree-memory operation with provenance and branch rollback. Together with existing reasoning rerankers, the frontier now couples iterative evidence acquisition, memory control, reflection, and trajectory-level optimization.
+3. **Advertising and industrial control**: Agents increasingly operate above low-latency serving as planners, controllers, and experiment-driven policy selectors. HOBA uses an LLM strategist, on-policy expert selection, memory retrieval, and a bounded bidding expert pool; SWAG-Bid plans across overlapping seven-day constraint windows instead of optimizing each day independently. Their production A/B results reinforce a common architecture: agentic control on the strategy plane, constrained proven models on the execution plane, and online experiments as the final feedback loop.
 
 ### Convergence of Four Research Lines
 
