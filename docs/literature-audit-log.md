@@ -1,5 +1,17 @@
 # Literature Audit Log
 
+## 2026-08-30
+
+- Scope: incremental primary-source search for 2025-01-01 through 2026-08-30 across agentic recommendation, search, advertising, and major-platform deployments.
+- Retrieval: `research-lit` fan-out over recommendation, search, and advertising/industry, plus direct arXiv paper-history and full-text checks. No local PDFs, Zotero, or Obsidian sources were available; the arXiv helper was unresolved, so structured retrieval degraded to first-party arXiv/ACL/ACM pages.
+- Candidates: 35 unique in-scope candidates after mechanical arXiv/DOI/normalized-title de-duplication. Fully verified and added: 7. Corrected: 0. Removed: 0.
+- Added recommendation: live-catalogue conversational recommendation (`2608.27006`, DOI `10.1145/3773078.3841297`), MMEACR (`2607.07108`), and RecThinker (`2603.09843`).
+- Added search: CAS (`2608.20771`) and LoongReflect (`2608.11967`).
+- Added advertising: AdsWorldEngine (`2608.13833`).
+- Added industry deployment: Melo (`2607.23718`, DOI `10.1145/3773078.3831935`).
+- Primary sources: arXiv abstract/history and full HTML for every added entry; the live-catalogue CRS and Melo RecSys references/DOIs were cross-checked from their first-party paper records. AdsWorldEngine deployment evidence comes from the paper's Microsoft Copilot online-experiment section.
+- Verification: titles, complete author lists, institutions, first publication dates, venue status, agent architecture, experimental settings, limitations, and reported metrics were checked against the paper text. Remaining candidates were not promoted because they were lower priority for this daily increment or had not completed the same full-field curation package.
+
 ## 2026-08-29
 
 - Scope: incremental primary-source search for 2025-01-01 through 2026-08-29 across agentic recommendation, search, advertising, and major-platform deployments.

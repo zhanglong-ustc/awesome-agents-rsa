@@ -29,6 +29,26 @@
         },
         {
           "year": 2026,
+          "title": "Conversational Recommendation over Live E-Commerce Catalogues with Self-Refreshing Retrieval",
+          "paperUrl": "https://arxiv.org/abs/2608.27006",
+          "venue": "RecSys 2026",
+          "authors": ["Ante Kapetanović", "Tomislav Đuričić", "Dionizije Fa", "Andro Merćep", "Emanuel Lacić"],
+          "institutions": ["Infobip"],
+          "firstPublished": "2026-08-27",
+          "arxivId": "2608.27006",
+          "doi": "10.1145/3773078.3841297",
+          "resource": { "label": "Demo", "url": "https://github.com/infobip/infobip-agentic-crs" },
+          "trainingMethods": ["Training-free"],
+          "tags": ["Conversational Rec", "Tool Orchestration", "Session Memory", "Live Catalogue"],
+          "description": "A controller routes multi-turn shopping dialogue to preference elicitation or a search→rerank→diversity tool path, while a hash-based self-refreshing retriever keeps shared catalogue, profile, and session state current.",
+          "detailId": "2608.27006",
+          "details": {
+            "abstractZh": "该 RecSys 2026 系统面向持续上新、改价、补货和下架的真实电商目录，把多轮购物对话与 self-refreshing retrieval 组合成 merchant-agnostic Agent。Controller 将消息分成八类意图，在偏好模糊时调用 elicitor sub-agent 追问 1–3 个问题，否则调度 semantic search→可选非生成式 rerank→diversity selection；向量库、用户 profile 与 session state 由检索和对话两条流水线共享。每次同步用稳定 ID、全量 hash 与 semantic hash 区分新增、语义变化、纯 metadata 变化、删除与未变化条目，只处理 delta；500 条匿名目录上，无变化/改价库存/删除分别仅耗完整重建时间的 1.8%/2.5%/2.1%，新增或描述类别变化为 11.0%/12.3%。论文提供 WhatsApp live demo，但明确说明评测覆盖同步正确性与成本，而非推荐质量，离线相关性和用户研究仍待完成。",
+            "abstractEn": "This RecSys 2026 system targets live e-commerce catalogues with continual additions, repricing, restocking, and deletion, combining multi-turn shopping dialogue with merchant-agnostic self-refreshing retrieval. A controller classifies messages into eight intents, invokes an elicitor sub-agent for one to three clarification questions when preferences are vague, or dispatches a semantic-search→optional non-generative rerank→diversity-selection tool path; the retrieval and dialogue pipelines share vector, user-profile, and session state. Each sync uses stable IDs, full hashes, and semantic hashes to distinguish new, semantically changed, metadata-only, deleted, and unchanged products and processes only the delta; on an anonymized 500-item catalogue, no-change, price/stock, and deletion cases take 1.8%/2.5%/2.1% of full rebuild time, while additions and description/category changes take 11.0%/12.3%. The paper provides a live WhatsApp demo but explicitly limits evaluation to synchronization correctness and cost rather than recommendation quality, leaving offline relevance and user studies for future work."
+          }
+        },
+        {
+          "year": 2026,
           "title": "Personalized Communication Skills for Agentic Recommender Systems",
           "paperUrl": "https://arxiv.org/abs/2608.08417",
           "venue": "arXiv 2026",
@@ -60,6 +80,26 @@
           "details": {
             "abstractZh": "ReasonRec 提出了一种以 Observe→Deliberate→Act 为架构的多模态推荐 Agent：Observe 阶段用视觉语言模型对文本、图像和用户历史进行表征；Deliberate 阶段通过推理感知视觉指令微调和思维链做显式推理；Act 阶段依据不确定性判断是否将困难样本委派给轻量级传统推荐工具。在 sequential recommendation、direct recommendation、CTR prediction 和 explanation generation 四类任务及五个真实数据集上，相对强多模态基线在 HR@5、NDCG@5 等关键排序指标上的相对提升超过 30%。该工作将工具委派从固定流程改造为置信度/不确定性触发的自适应行为。",
             "abstractEn": "ReasonRec builds a multimodal recommender agent with an Observe→Deliberate→Act architecture: Observe encodes text, images, and user history via VLM; Deliberate applies reasoning-aware visual instruction tuning with CoT for explicit reasoning; Act delegates uncertain hard samples to a lightweight external recommender tool based on confidence/uncertainty. Covering four task types and five real-world datasets, the approach reports over 30% relative improvement on key ranking metrics (HR@5, NDCG@5) compared to strong multimodal baselines, turning tool delegation from a fixed pipeline step into confidence-triggered adaptive behavior."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Seeing and Reflecting: Multimodal Memory-Enhanced Agent Collaboration for Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2607.07108",
+          "venue": "arXiv 2026",
+          "authors": ["Hao Cong", "Huizu Lin", "Zihan Wang", "Chengkai Huang", "Quan Z. Sheng", "Lina Yao"],
+          "institutions": ["Tsinghua University", "University of Science and Technology of China", "Peking University", "The University of New South Wales", "Macquarie University", "CSIRO's Data61"],
+          "firstPublished": "2026-07-08",
+          "arxivId": "2607.07108",
+          "doi": "10.48550/arXiv.2607.07108",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "Multimodal Memory", "Reflection", "User Modeling"],
+          "description": "MMEACR coordinates persistent User and Item Memory Agents with attribute-guided reinforcement/reflection, preserves raw cross-modal evidence in a parallel embedding memory, and fuses both rankings via reciprocal rank fusion.",
+          "detailId": "2607.07108",
+          "details": {
+            "abstractZh": "MMEACR 用双轨记忆解决推荐 Agent 的文本中心化与粗粒度更新问题。推理轨由 User Memory Agent 与 Item Memory Agent 维护持久语义状态，并在正负物品交互后通过属性引导的 reinforcement-and-reflection 更新用户与物品记忆；匹配轨保留原始交互叙事和物品图像的细粒度多模态 embedding，最终以加权 RRF 融合两路排名。实验在 Amazon Reviews 的 CDs、Cell Phones 与 Fashion 三个域上、每域 100 用户和 500 次交互、五个随机种子评测；相对最强基线，MMEACR-RRF 在 Cell Phones 的 NDCG@1/@5 提升 14.3%/21.26%，在 Fashion 的 NDCG@1/@5 与 MRR 提升 45.45%/23.33%/27.14%。",
+            "abstractEn": "MMEACR addresses text-centric and coarse-grained memory updates in recommendation agents with a dual-track design. In the reasoning track, persistent User and Item Memory Agents update semantic states after positive/negative item interactions through attribute-guided reinforcement and reflection; the matching track preserves fine-grained multimodal evidence from raw interaction narratives and item images, and weighted reciprocal rank fusion combines both rankings. Experiments on the Amazon Reviews CDs, Cell Phones, and Fashion domains use 100 users and 500 interactions per domain over five random seeds; versus the strongest baseline, MMEACR-RRF improves NDCG@1/@5 by 14.3%/21.26% on Cell Phones and improves NDCG@1/@5 and MRR by 45.45%/23.33%/27.14% on Fashion."
           }
         },
         {
@@ -105,6 +145,26 @@
           "details": {
             "abstractZh": "AgenticRec 将推荐专用工具嵌入 ReAct 式循环，并将最终排名奖励反向用于训练整条 reasoning → tool invocation → observation → ranking 轨迹，而非仅训练最后的排序 token。框架通过 recommendation-oriented trajectory optimization/RL 学习何时调用工具；Progressive Preference Refinement (PPR) 从排名违例中挖掘困难负样本以强化细粒度偏好边界。实验使用 Amazon Reviews 2023 的 CDs、Musical Instruments、Office Products、Video Games 四个子集，backbone 为 Qwen3-4B-Instruct-2507；在 20 个 dataset×metric 组合中的 19 个取得最优结果。关键 ablation 表明：未经训练的工具调用在部分数据上会引入噪声，经 trajectory-level RL 后工具集成 Agent 才稳定超越纯推理模型，说明工具使用策略的训练才是收益来源。",
             "abstractEn": "AgenticRec embeds recommendation-specific tools in a ReAct-style loop and uses trajectory-level RL with ranking reward to train the full reasoning→tool invocation→observation→ranking trajectory rather than only the final ranking token. Progressive Preference Refinement (PPR) mines hard negatives from ranking violations to strengthen fine-grained preference boundaries. Experiments on four Amazon Reviews 2023 subsets (Qwen3-4B-Instruct-2507 backbone) achieve best results on 19 of 20 dataset×metric cells. Key ablation shows: untrained tool calls introduce noise on some datasets; only after trajectory-level RL does the tool-integrated agent consistently surpass pure-reasoning models, proving that training the tool-use policy — not merely providing tools — is the source of gains."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "RecThinker: An Agentic Framework for Tool-Augmented Reasoning in Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2603.09843",
+          "venue": "arXiv 2026",
+          "authors": ["Haobo Zhang", "Yutao Zhu", "Kelong Mao", "Tianhao Li", "Zhicheng Dou"],
+          "institutions": ["Renmin University of China", "JD.com"],
+          "firstPublished": "2026-03-10",
+          "arxivId": "2603.09843",
+          "doi": "10.48550/arXiv.2603.09843",
+          "resource": { "label": "Code", "url": "https://github.com/Aska-zhang/RecThinker" },
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Planning", "Tool Use", "Information Gaps", "GRPO"],
+          "description": "RecThinker runs an Analyze→Plan→Act investigation loop over five recommendation-specific tools, then uses self-augmented SFT and GRPO with accuracy, format, and tool-efficiency rewards to refine complete tool-use trajectories.",
+          "detailId": "2603.09843",
+          "details": {
+            "abstractZh": "RecThinker 把推荐从被动读取现有画像改造成主动调查：Agent 先分析用户与候选物品的信息缺口，再规划并迭代调用 profile、history、similar-user、item 与 knowledge-graph 五类专用工具，最后基于累计证据完成排序。训练先从高质量推理—工具轨迹做 self-augmented SFT，再以 GRPO 联合优化 NDCG@10、格式正确性与工具效率。实验覆盖 Amazon CD & Vinyl 和 MovieLens-1M 的稀疏/稠密四个 100 用户子集，采用 1 正 9 负的 leave-one-out 排名；RecThinker 在四组 NDCG@10 上相对最强基线分别提升 11.71%、10.57%、7.61% 和 11.79%。",
+            "abstractEn": "RecThinker turns recommendation from passive profile consumption into active investigation: the agent analyzes information gaps for users and candidate items, plans and iteratively calls five specialized tools for profiles, history, similar users, items, and knowledge graphs, then ranks from the accumulated evidence. Training first applies self-augmented SFT to high-quality reasoning/tool trajectories and then GRPO with rewards for NDCG@10, format correctness, and tool efficiency. Evaluation covers sparse and dense 100-user subsets of Amazon CD & Vinyl and MovieLens-1M with leave-one-out ranking over one positive and nine negatives; relative NDCG@10 gains over the strongest baseline are 11.71%, 10.57%, 7.61%, and 11.79% across the four settings."
           }
         },
         {
@@ -211,6 +271,26 @@
         },
         {
           "year": 2026,
+          "title": "CAS: Conformalized Agentic Search via Adaptive Retrieval and Policy Weighting",
+          "paperUrl": "https://arxiv.org/abs/2608.20771",
+          "venue": "arXiv 2026",
+          "authors": ["Zixi Zhu", "Jiayuan Su", "Jian Zhang", "Yu Lin", "Hongwei Wang"],
+          "institutions": ["Zhejiang University", "ZJU-UIUC Institute", "State Key Laboratory of CAD&CG, Zhejiang University", "Tencent"],
+          "firstPublished": "2026-08-21",
+          "arxivId": "2608.20771",
+          "doi": "10.48550/arXiv.2608.20771",
+          "resource": { "label": "Code", "url": "https://github.com/S1llyBird/CAS" },
+          "trainingMethods": ["RL"],
+          "tags": ["Iterative Search", "Adaptive Retrieval", "Conformal Prediction", "Trajectory RL"],
+          "description": "CAS interleaves reasoning and search with conformal adaptive document sets, then uses online conformal confidence to down-weight unreliable complete trajectories inside GRPO.",
+          "detailId": "2608.20771",
+          "details": {
+            "abstractZh": "CAS 针对搜索 Agent 在 RL 中的两类可靠性问题——固定 top-k 丢证据/引噪声，以及策略逐渐过度自信后产生幻觉和冗余搜索——把 conformal prediction 同时接入检索与训练。每轮 `<search>` 后，Adaptive Prediction Set 根据当前查询难度动态截断文档并保证目标覆盖；完整 reasoning→search→observation→answer 轨迹进入 GRPO 时，Adaptive Conformal Inference 根据答案 token 的 NLL 动态识别低置信轨迹并降低其策略权重。方法在 NQ、TriviaQA、PopQA、HotpotQA、2Wiki、MuSiQue、Bamboogle 七个基准评测：Qwen2.5-3B 的平均 EM 从 Search-R1 的 0.336 提升到 0.401，Qwen3-8B 达 0.464，高于 Search-R1 的 0.400 和 Search-R2 的 0.446；去掉 ACI 或 APS 后 3B 平均 EM 分别降到 0.384 和 0.389。",
+            "abstractEn": "CAS addresses two reliability failures in RL-trained search agents—evidence loss/noise from fixed top-k retrieval and hallucinated or redundant searches caused by growing policy overconfidence—by applying conformal prediction on both retrieval and training sides. After each `<search>` action, an Adaptive Prediction Set dynamically truncates documents according to query difficulty under a target coverage guarantee; when complete reasoning→search→observation→answer trajectories enter GRPO, Adaptive Conformal Inference uses answer-token NLL to identify and down-weight low-confidence trajectories. Across NQ, TriviaQA, PopQA, HotpotQA, 2Wiki, MuSiQue, and Bamboogle, Qwen2.5-3B improves average EM from Search-R1's 0.336 to 0.401, while Qwen3-8B reaches 0.464 versus 0.400 for Search-R1 and 0.446 for Search-R2; removing ACI or APS lowers the 3B average to 0.384 or 0.389."
+          }
+        },
+        {
+          "year": 2026,
           "title": "Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory",
           "paperUrl": "https://arxiv.org/abs/2608.10676",
           "venue": "arXiv 2026",
@@ -227,6 +307,26 @@
           "details": {
             "abstractZh": "ReTree 为长程搜索 Agent 构建有来源链接的树状记忆，每个节点保存受限摘要、证据与修订历史，从而避免完整轨迹导致的上下文无限增长。当新证据否定旧结论时，系统回溯到该结论的引入节点，替换过期证据、重生成摘要、剪除受影响分支，再从修复后的状态继续搜索，形成显式 reflection/error-recovery 闭环。论文在 Bamboogle、FRAMES、2Wiki 和 HotpotQA 共 2,149 个问题上用 Qwen3-8B 评测，相对 Full-Trajectory ReAct 的回答准确率最高提升 25.6 个百分点，同时把平均最大单步推理上下文控制在后者的约 66%–79%。",
             "abstractEn": "ReTree gives long-horizon search agents a source-linked tree memory whose nodes retain bounded summaries, evidence, and revision history, avoiding unbounded full-trajectory context. When new evidence contradicts an earlier claim, the agent traces the claim to its origin, replaces stale evidence, regenerates summaries, prunes affected branches, and resumes search from the repaired state—an explicit reflection and error-recovery loop. With Qwen3-8B on 2,149 questions from Bamboogle, FRAMES, 2Wiki, and HotpotQA, ReTree improves answer accuracy over Full-Trajectory ReAct by up to 25.6 percentage points while limiting average maximum per-step reasoning context to roughly 66–79% of the baseline."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation",
+          "paperUrl": "https://arxiv.org/abs/2608.11967",
+          "venue": "arXiv 2026",
+          "authors": ["Zhixin Zhang", "Xinke Jiang", "Zhibang Yang", "Weixuan Xu", "Guohong Qiu", "Xu Chu", "Junfeng Zhao", "Yasha Wang"],
+          "institutions": ["Peking University", "National Engineering Research Center for Software Engineering", "Key Laboratory of High Confidence Software Technologies, Ministry of Education", "Center on Frontiers of Computing Studies, Peking University", "Peking University Information Technology Institute (Tianjin Binhai)"],
+          "firstPublished": "2026-08-12",
+          "arxivId": "2608.11967",
+          "doi": "10.48550/arXiv.2608.11967",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Reflection", "Tree Memory", "Backtracking", "Trajectory RL"],
+          "description": "LoongReflect treats reflection as memory control over a reversible trajectory tree; explicit reflect/backtrack actions are trained by answer-masked global-teacher distillation plus outcome-based GRPO with look-ahead coordination.",
+          "detailId": "2608.11967",
+          "details": {
+            "abstractZh": "LoongReflect 将长程搜索中的 reflection 定义为对可逆轨迹树的 memory-control policy。Agent 通过显式 `<reflect>` 将已验证事实、缺失证据与分支风险压缩进工作记忆，并用 `<backtrack>` 从活动上下文移除不可靠后缀、恢复已验证状态，同时保留纠错教训；训练以 answer-masked 特权教师提供局部密集蒸馏信号，再用 outcome-based GRPO 对完整轨迹做全局校准。模型在 HotpotQA 与 2Wiki 上训练，在 Bamboogle、FRAMES、MuSiQue、NQ、TriviaQA 等七个检索 QA 基准评测；Qwen2.5-3B/7B 的平均 F1 为 46.15/49.21，分别比最强 AgenticRAG-R1 基线高 12.60/12.61 个点，去掉 reflect 或 backtrack 会使 3B 平均 F1 下降 15.31 或 13.06 点。",
+            "abstractEn": "LoongReflect formulates long-horizon reflection as a memory-control policy over a reversible trajectory tree. Explicit `<reflect>` actions consolidate verified facts, missing evidence, and branch risks into working memory, while `<backtrack>` removes an unreliable suffix from active context, restores a validated state, and preserves a corrective lesson; answer-masked privileged-teacher distillation supplies dense local supervision and outcome-based GRPO calibrates complete trajectories globally. Trained on HotpotQA and 2Wiki and evaluated across seven retrieval-QA benchmarks including Bamboogle, FRAMES, MuSiQue, NQ, and TriviaQA, Qwen2.5-3B/7B reach average F1 scores of 46.15/49.21—12.60/12.61 points above the strongest AgenticRAG-R1 baseline; removing reflect or backtrack lowers the 3B average by 15.31 or 13.06 points."
           }
         },
         {
@@ -281,6 +381,26 @@
       "name": "Advertising",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "AdsWorldEngine: A Self-Evolving Conversational Advertising Agent through Orchestrator and Tool Coevolution",
+          "paperUrl": "https://arxiv.org/abs/2608.13833",
+          "venue": "arXiv 2026",
+          "authors": ["Simiao Zuo", "Chenhui Xu", "Yimeng Jia", "Qiang Lou", "Jian Jiao", "Denis Charles"],
+          "institutions": ["Microsoft"],
+          "firstPublished": "2026-08-13",
+          "arxivId": "2608.13833",
+          "doi": "10.48550/arXiv.2608.13833",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Conversational Ads", "Tool Coevolution", "Reflection", "Online A/B"],
+          "description": "A gated advertising agent resolves dialogue state, generates commercial intents, calls retrieval/relevance/ranking tools, reflects over candidates, and alternates trajectory-level Orchestrator RL with preference updates to the tools themselves.",
+          "detailId": "2608.13833",
+          "details": {
+            "abstractZh": "AdsWorldEngine 将对话广告建模为端到端 Agent 决策：Opportunity Gate 判断当前轮是否适合展示广告，Orchestrator 解析多轮状态、生成 1–3 个商业意图并调用检索/相关性/排序工具，再由 reflection 从候选中选出 top-3，离线 Evaluator 为完整轨迹提供相关性与多样性奖励。系统先用 SFT+GRPO 训练 Orchestrator，再把高低奖励 rollout 转成 preference triples 训练 intent-to-ads 工具，交替三轮形成 actor–tool 共进化；主观判断模型还用人类标签生成思维轨迹、反思过滤和 cost-sensitive GRPO 保留非对称错误代价。相对当前生产系统，三轮后离线 diversity +62.87%、relevance +82.26%；部署到全球 Microsoft Copilot surfaces 的 20 天在线 A/B 中，RPM +22%、广告覆盖率 +74%。",
+            "abstractEn": "AdsWorldEngine formulates conversational advertising as an end-to-end agent decision: an Opportunity Gate decides whether a turn is suitable for ads, an Orchestrator resolves multi-turn state, generates one to three commercial intents, calls retrieval/relevance/ranking tools, and reflects over candidates to select a top-three slate, while an offline Evaluator supplies relevance and diversity rewards for complete trajectories. The system first trains the Orchestrator with SFT and GRPO, then converts high/low-reward rollouts into preference triples for the intent-to-ads tool, alternating for three actor–tool coevolution rounds; judgment models use human-label-conditioned reasoning traces, reflection filtering, and cost-sensitive GRPO to preserve asymmetric error costs. After three rounds, offline diversity and relevance improve 62.87% and 82.26% over the production system; a 20-day online A/B deployment across Microsoft Copilot surfaces worldwide reports RPM +22% and ad coverage +74%."
+          }
+        },
         {
           "year": 2026,
           "title": "Beyond Single-Episode Optimization: Sliding-Window Aware Generative Auto-Bidding for Long-Term Advertising Effectiveness",
@@ -376,6 +496,26 @@
           "details": {
             "abstractZh": "STEPS 将 push recommendation 的决策从“”定时间 scheduler 调一个模型“”级成 Agent 自己决定 whether to send + when to wake itself up again 的 self-triggered 闭环。Planning Agent 通过 gated ordinal regression 预测下一次系统调用时间，Execution Agent 根据轨迹奖励决定是否发 push，Filtering Agent 控制计算量并阻止不合理规划。线上 A/B 结果：用户 active days +0.2843%，push permission disable rate -1.9089%，Filtering Agent 将计算开销降低 79.42%。系统已在超过 10 亿用户规模的抖音全量部署，是“”荐 Agent 从 item ranking 走向自主时间规划“”一个强工业实例。",
             "abstractEn": "STEPS upgrades push recommendation from 'fixed-schedule model call' to a self-triggered closed loop where the agent decides both whether to send and when to wake itself up next. Planning Agent predicts next system invocation time via gated ordinal regression; Execution Agent decides send/no-send via trajectory reward; Filtering Agent controls compute and blocks unreasonable plans. Online A/B results: user active days +0.2843%, push permission disable rate -1.9089%, Filtering Agent reduces computation overhead by 79.42%. Deployed to 1B+ Douyin users — a strong industry instance of 'recommendation agents moving from item ranking to autonomous time planning'."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Melo: A Production LLM-Powered Music Recommendation Agent",
+          "paperUrl": "https://arxiv.org/abs/2607.23718",
+          "venue": "RecSys 2026",
+          "authors": ["Shijia Wang", "Da Guo", "Qiang Xiao", "Fanghui Bi", "Weisheng Li", "Dongjing Wang", "Chuanjiang Luo"],
+          "institutions": ["NetEase Cloud Music", "Hangzhou Dianzi University"],
+          "firstPublished": "2026-07-26",
+          "arxivId": "2607.23718",
+          "doi": "10.1145/3773078.3831935",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "Tool Orchestration", "Reflection", "Online A/B"],
+          "description": "NetEase Cloud Music's production agent uses a deterministic Understand→Plan→Execute→Reflect→Synthesize graph, live-index entity grounding, and a bounded Reflect→Plan retry loop over heterogeneous retrieval and ranking tools.",
+          "detailId": "2607.23718",
+          "details": {
+            "abstractZh": "Melo 是部署在网易云音乐 Muse Mix 的生产级音乐推荐 Agent，以固定的 Understand→Plan→Execute→Reflect→Synthesize 五节点状态图编排目录搜索、用户行为检索、个性化排序和生成式召回等异构工具。三层 inference-time entity grounding 在计划前用实时目录/搜索索引核验实体；当候选不足或覆盖意图失败时，Reflect 节点把失败原因写成 hint 回送 Plan，最多执行两轮约束放宽或查询改写。约百万用户、等流量分配的一个月线上 A/B 显示 playlist retention 指标提升超过 2 个百分点、核心 engagement 指标提升超过 1 分钟；298 查询压力集上，grounding 将实体误识别率从 17.4% 降至 9.6%，retry 在 5.8% 会话触发并达到 59.1% 流程恢复率，其中 77% 的恢复会话保留核心约束。",
+            "abstractEn": "Melo is a production music recommendation agent deployed in NetEase Cloud Music's Muse Mix. A fixed Understand→Plan→Execute→Reflect→Synthesize state graph orchestrates heterogeneous tools for catalog search, user-behavior retrieval, personalized ranking, and generative recall; three-layer inference-time entity grounding verifies interpretations against the live catalog/search index before planning, while a bounded Reflect→Plan loop verbalizes failures and retries with relaxed constraints or rewritten queries. A one-month, equally allocated online A/B test covering approximately one million users reports over +2 percentage points on a playlist-retention metric and over +1 minute on a core engagement metric; on a 298-query stress set, grounding reduces entity misidentification from 17.4% to 9.6%, and retry fires on 5.8% of sessions with 59.1% process recovery, preserving core constraints in 77% of recovered sessions."
           }
         },
         {
