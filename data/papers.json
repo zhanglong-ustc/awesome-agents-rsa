@@ -251,6 +251,26 @@
       "entries": [
         {
           "year": 2026,
+          "title": "From Inertia to Objectivity: Improving Deep Research Agents with Noise Isolation",
+          "paperUrl": "https://arxiv.org/abs/2608.23045",
+          "venue": "EMNLP 2026",
+          "authors": ["Xiangxin Zhang", "Zhanwei Zhang", "Zhihang Fu", "Binbin Lin", "Wenxiao Wang"],
+          "institutions": ["Zhejiang University", "Darwinmind AI", "Alibaba Group"],
+          "firstPublished": "2026-08-24",
+          "arxivId": "2608.23045",
+          "doi": "10.48550/arXiv.2608.23045",
+          "resource": { "label": "Code", "url": "https://github.com/PangSMPang/NIS-Agent" },
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Deep Research", "Noise Isolation", "Query Rewriting", "Verification"],
+          "description": "NIS-Agent isolates webpage triage from accumulated context, rewrites queries when evidence is weak, and independently validates premise-to-conclusion steps before the manager continues or terminates research.",
+          "detailId": "2608.23045",
+          "details": {
+            "abstractZh": "NIS-Agent 针对长程搜索中错误证据被上下文惯性反复放大的问题，构建 Manager–Worker 深度研究闭环：SearchAgent 在隔离上下文中判断网页相关性，证据不足时自适应改写 query；ManagerAgent 重组执行历史，并独立验证 premise→conclusion 推理链后决定继续检索或终止。论文还以 SFT+GRPO 训练 NIS-8B 的检索后工具决策，在 GAIA 全量验证集及 WebWalkerQA、BrowseComp、BrowseComp-zh 子集上评测；DeepSeek-V4-Pro 配置的 GAIA/WebWalkerQA 为 81.21/75.00，GPT-4o 配置在 GAIA 上把每题总 token 从 219.8k 降至 147.3k（-33.0%）。GPT-4o 消融中完整系统为 61.82，去掉隔离过滤或独立验证后分别降至 59.39 和 56.96；这些均为作者报告结果。",
+            "abstractEn": "NIS-Agent addresses context inertia in long-horizon search with a manager–worker deep-research loop. Its SearchAgent triages webpages in an isolated context and adaptively rewrites the query when evidence is insufficient, while the ManagerAgent reorganizes execution history and independently validates premise-to-conclusion steps before continuing or terminating. The paper also trains NIS-8B with SFT plus GRPO for post-search tool decisions and evaluates on the full GAIA validation set plus WebWalkerQA, BrowseComp, and BrowseComp-zh samples; the DeepSeek-V4-Pro configuration reports 81.21 on GAIA and 75.00 on WebWalkerQA, while the GPT-4o configuration reduces GAIA tokens per query from 219.8k to 147.3k (−33.0%). In GPT-4o ablations, the full system scores 61.82 versus 59.39 without the isolated filter and 56.96 without independent validation; all figures are author-reported."
+          }
+        },
+        {
+          "year": 2026,
           "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
           "paperUrl": "https://arxiv.org/abs/2608.24794",
           "venue": "arXiv 2026",
@@ -383,6 +403,46 @@
       "entries": [
         {
           "year": 2026,
+          "title": "Fine-Tuning Autobidders with Group Relative Policy Optimization",
+          "paperUrl": "https://arxiv.org/abs/2608.28199",
+          "venue": "arXiv 2026",
+          "authors": ["Anton Safin", "Alexandra Khirianova", "Andrey Pudovikov", "Aleksandr Katrutsa", "Egor Samosvat"],
+          "institutions": ["Avito Research", "IAI MSU", "AI Center MSU"],
+          "firstPublished": "2026-08-28",
+          "arxivId": "2608.28199",
+          "doi": "10.48550/arXiv.2608.28199",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Auto-Bidding", "Trajectory RL", "GRPO", "Budget Pacing"],
+          "description": "AB-GRPO samples groups of complete bidding trajectories under a shared campaign context and learns a critic-free bounded correction to an adaptive linear pacing controller from relative trajectory rewards.",
+          "detailId": "2608.28199",
+          "details": {
+            "abstractZh": "AB-GRPO 将用于大模型后训练的 group-relative policy optimization 迁移到带预算与目标 CPC 约束的 campaign 级竞价 MDP。系统在相同 campaign context 下采样多条完整 bid trajectory，以组内相对 reward 训练单一 policy，不学习 critic；policy 只输出对已调优 Adaptive Linear Model 增益的有界修正，因此是在受约束控制器之上的 trajectory-level RL，而非 LLM Agent。论文在 BAT、iPinYou、AuctionNet 三个公开离线环境中比较启发式、PID/M-PID 与 actor–critic RL：BAT 上 clicks/conversions 为 7,764/766（ALM 为 7,669/757），iPinYou clicks 为 937.8±11.8，AuctionNet clicks/conversions 为 19,677.79/869.08。作者明确未报告生产部署或线上 A/B，且在 AuctionNet clicks 上 PID 的 19,784.77 略高，因此应将其视为广告投放控制中的轨迹优化证据而非已验证工业收益。",
+            "abstractEn": "AB-GRPO transfers group-relative policy optimization from LLM post-training to a campaign-level bidding MDP with budget and target-CPC constraints. It samples groups of complete bid trajectories under the same campaign context and trains one policy from relative rewards without a critic; the policy emits only a bounded correction to a tuned Adaptive Linear Model gain, making this trajectory-level RL over a constrained controller rather than an LLM agent. Against heuristic, PID/M-PID, and actor–critic RL baselines on the public BAT, iPinYou, and AuctionNet offline environments, it reports 7,764 clicks and 766 conversions on BAT versus 7,669/757 for ALM, 937.8±11.8 clicks on iPinYou, and 19,677.79 clicks with 869.08 conversions on AuctionNet. No production deployment or online A/B test is reported, and PID's 19,784.77 AuctionNet clicks are slightly higher, so the result is evidence for trajectory optimization in ad control rather than validated business lift."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Astar: Learning to Propose Evolution Directions for Self-Evolving Industrial AI Systems",
+          "paperUrl": "https://arxiv.org/abs/2608.27287",
+          "venue": "arXiv 2026",
+          "authors": ["Jinxin Hu", "Hao Deng", "Haibo Xing", "Lingyu Mu", "Muyu Zou", "Weiqin Yang", "Sirui Chen", "Bohao Wang", "Zhezheng Hao", "Hao Zhang", "Zulong Chen", "Shizhun Wang", "Yu Zhang", "Xiaoyi Zeng", "Jiawei Chen"],
+          "institutions": ["Alibaba Group", "Zhejiang University"],
+          "firstPublished": "2026-08-27",
+          "arxivId": "2608.27287",
+          "doi": "10.48550/arXiv.2608.27287",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Industrial Evolution", "Advertising Recall", "Closed Loop", "Online A/B"],
+          "description": "Astar learns evolution directions from implementation–training–evaluation histories, scores proposals with a learned surrogate, and closes the loop through automatic implementation, training, evaluation, and incremental feedback.",
+          "detailId": "2608.27287",
+          "details": {
+            "abstractZh": "Astar 不是直接竞价或排序的 serving Agent，而是学习如何为工业广告召回系统提出下一步演化方向。它从真实 implementation→training→evaluation 提交历史构建样本，用三层 hierarchical hints 缩小改动空间，经 mid-training、SFT 与 RL 训练方向生成模型，并用持续更新的 reward-model surrogate 筛选候选；通过自动实现、训练、评测与结果回灌形成闭环。Astar-8B 的真实执行单提议成功率 S@1 为 0.6786，高于资深工程师的 0.3229 和论文所列最强通用模型的 0.3071；在 Alibaba Lazada 广告 recall model 上连续两周完成 20 次迭代，离线 Hitrate@200 +23.6%。2026-07-01 至 07-05 的随机流量线上 A/B 报告 GMV +4.86%、广告收入 +1.82%、clicks +0.84%、orders +1.79%，均为论文作者报告。",
+            "abstractEn": "Astar is not a serving-time bidder or ranker; it learns how to propose the next evolution direction for an industrial advertising retrieval system. It constructs training examples from implementation→training→evaluation histories, narrows the change space with three-level hierarchical hints, trains the direction model with mid-training, SFT, and RL, and filters proposals with an incrementally updated reward-model surrogate; automatic implementation, training, evaluation, and feedback close the loop. Astar-8B reports real-execution single-proposal success S@1 of 0.6786 versus 0.3229 for senior engineers and 0.3071 for the strongest named general-purpose model; on Alibaba Lazada's advertising recall model, 20 consecutive iterations over two weeks improve offline Hitrate@200 by 23.6%. A randomized online A/B test from July 1–5, 2026 reports GMV +4.86%, advertising revenue +1.82%, clicks +0.84%, and orders +1.79%; all figures are author-reported."
+          }
+        },
+        {
+          "year": 2026,
           "title": "AdsWorldEngine: A Self-Evolving Conversational Advertising Agent through Orchestrator and Tool Coevolution",
           "paperUrl": "https://arxiv.org/abs/2608.13833",
           "venue": "arXiv 2026",
@@ -463,6 +523,46 @@
       "name": "Industry Deployments",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "A/B Agent: A Self-Evolving Agent for Strategy Iteration in Industrial A/B Testing",
+          "paperUrl": "https://arxiv.org/abs/2608.04625",
+          "venue": "arXiv 2026",
+          "authors": ["Zhuohang Jiang", "Yuxin Chen", "Yongsen Pan", "Zheng Hu", "Wenqi Fan", "Qing Li", "Hongyang Wang", "Jun Wang", "Wenwu Ou"],
+          "institutions": ["The Hong Kong Polytechnic University", "Kuaishou Technology", "University of Electronic Science and Technology of China", "Southwest Jiaotong University"],
+          "firstPublished": "2026-08-05",
+          "arxivId": "2608.04625",
+          "doi": "10.48550/arXiv.2608.04625",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "A/B Testing", "Experience Tree", "Self-Evolution"],
+          "description": "Kuaishou's A/B Agent retrieves atomic strategy experience from a hierarchical tree, generates executable experiments, and writes validated online outcomes back through an experiment tree for iterative strategy evolution.",
+          "detailId": "2608.04625",
+          "details": {
+            "abstractZh": "A/B Agent 将工业推荐策略迭代组织成可检索、可回写的自演化闭环。系统把历史实验拆成 atomic strategy chunks 存入 hierarchical experience tree，经 sparse+dense multi-path Tree-RAG 与层级重排生成可执行策略；experiment tree 比较父子与同级实验结果，进行局部参数搜索或机制替换，并把验证后的经验写回。离线评测覆盖 Kuaishou 电商三个场景、310 条实验记录，overall score 为 7.244；相对各场景最强 RAG baseline，论文报告提升 25.0%、31.7% 和 23.5%。线上策略 5 相对专家基线的 Cart GMV +4.829%，且论文表中所列 guardrail 指标均为正；策略上线前经过规则校验、Agent 审核与人工审核，因此收益应理解为受约束的人机协同实验流程结果。",
+            "abstractEn": "A/B Agent organizes industrial recommender-strategy iteration as a retrievable, writable self-evolution loop. Historical experiments are decomposed into atomic strategy chunks in a hierarchical experience tree; sparse and dense multi-path Tree-RAG plus hierarchy-aware reranking generate executable strategies, while an experiment tree compares parent–child and sibling results, performs local parameter search or mechanism replacement, and writes validated experience back. Offline evaluation covers 310 experiment records across three Kuaishou e-commerce scenarios, reaching an overall score of 7.244 and reported gains of 25.0%, 31.7%, and 23.5% over the strongest RAG baseline in each scenario. Online Strategy 5 reports Cart GMV +4.829% versus the expert baseline with all listed guardrail metrics positive; rule checks plus agent and human review precede launch, so the lift belongs to a constrained human-in-the-loop experimentation workflow."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle",
+          "paperUrl": "https://arxiv.org/abs/2608.11241",
+          "venue": "arXiv 2026",
+          "authors": ["Dongyang Ao", "Kaixiang Fang", "Shijie Xu"],
+          "institutions": ["FiT, Tencent"],
+          "firstPublished": "2026-07-31",
+          "arxivId": "2608.11241",
+          "doi": "10.48550/arXiv.2608.11241",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "Bounded Autonomy", "Tool Orchestration", "HITL"],
+          "description": "RecSys Factory confines LLM autonomy to typed decision points inside deterministic recommender-lifecycle pipelines, using persistent state, skill-subgraph dispatch, pitfall memory, and auditable human-in-the-loop cards.",
+          "detailId": "2608.11241",
+          "details": {
+            "abstractZh": "RecSys Factory 面向推荐系统全生命周期运维，把 LLM 自主性限制在预先承诺流水线中的 typed decision points，而不是让 Agent 任意执行。平台以 host event 触发任务，由单一持久 PipelineState 承载状态，确定性地调度 29 个技能文件构成的子图，并从约 400 条 PitfallStore 经验中检索工作记忆；诊断与执行边界使用 schema-validated、幂等、可重放的 HITL card。论文报告在 Tencent 三条推荐业务线运行 78 天、共 1,624 次 CLI tool dispatch，WAITING 计为非成功时总成功率为 78.6%，将 WAITING 视为正确控制信号时约为 83.7%，且 94% wall-clock 等待期 CPU 使用为零。作者明确说明正式生产 operator 的完整 HITL rollout 计划在 v1.1，现有 card protocol 仅来自 8 天、16 次 test-user pilot；onboarding 压缩也不是受控基线，因此这些部署边界必须与平台可用性数据一并保留。",
+            "abstractEn": "RecSys Factory targets recommender-system lifecycle operations by limiting LLM autonomy to typed decision points in pre-committed pipelines rather than allowing unconstrained execution. Host events trigger work, one persistent PipelineState carries state, deterministic dispatch selects subgraphs from 29 skill files, and approximately 400 PitfallStore records provide working memory; schema-validated, idempotent, replayable HITL cards guard the diagnostic-to-execution boundary. Across a reported 78-day deployment on three Tencent recommender business lines, 1,624 CLI-tool dispatches achieve 78.6% success when WAITING is non-success or about 83.7% when WAITING is treated as a correct control signal, with zero CPU use during 94% of wall-clock waiting time. The paper explicitly says the full production-operator HITL rollout is planned for v1.1, the current card protocol comes from an eight-day, 16-run test-user pilot, and onboarding compression lacks a controlled baseline; these boundaries accompany the platform-availability evidence."
+          }
+        },
         {
           "year": 2026,
           "title": "Shape Your Feed: An LLM-based Agentic System for Conversational Recommendation",
