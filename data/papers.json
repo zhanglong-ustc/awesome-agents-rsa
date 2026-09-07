@@ -9,6 +9,26 @@
       "entries": [
         {
           "year": 2026,
+          "title": "Agents as Knowledge Integrator and Utilizer in Multimodal Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2608.29410",
+          "venue": "arXiv 2026",
+          "authors": ["Jinfeng Xu", "Zheyu Chen", "Shuo Yang", "Jinze Li", "Puzhen Wu", "Zewei Liu", "Zheng Lin", "Jianheng Tang", "Jing Yang", "Wei Wang", "Xiping Hu", "Edith Ngai"],
+          "institutions": ["The University of Hong Kong", "Beijing Institute of Technology", "Peking University", "Universiti Malaya", "Macao Polytechnic University"],
+          "firstPublished": "2026-08-29",
+          "arxivId": "2608.29410",
+          "doi": "10.48550/arXiv.2608.29410",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "Knowledge Memory", "Multimodal", "Behavior Graph"],
+          "description": "AgentMMRec coordinates an Integrator Agent that writes multimodal user/item knowledge memory with a Utilizer Agent that turns it into behavior-aware graphs for backbone-agnostic candidate reranking.",
+          "detailId": "2608.29410",
+          "details": {
+            "abstractZh": "AgentMMRec 用 Integrator Agent 联合解释训练交互与多模态 item 内容，把用户偏好和物品属性写入可复用 knowledge memory；Utilizer Agent 再从 memory 构造 user-user/item-item 行为图、细化各模态图，并重排 backbone 的 top-50 候选。实验在 Amazon Baby、Sports、Clothing 三个 5-core 数据集上按五次运行评测 Recall@10/20 与 NDCG@10/20，测试阶段冻结 memory 和模型以避免泄漏；三域 R@20 分别为 0.1079、0.1231、0.1071，主表 12 个指标提升均报告 p<0.05。该方法的代价主要前置到离线知识构建，三个数据集分别需要 86,535、180,222 和 210,293 次 LLM 调用，因此上线收益依赖 memory 的复用周期。",
+            "abstractEn": "AgentMMRec uses an Integrator Agent to jointly interpret training interactions and multimodal item content, writing user preferences and item properties into reusable knowledge memory; a Utilizer Agent then converts that memory into behavior-aware user-user and item-item graphs, refines modality graphs, and reranks a backbone's top-50 candidates. Five-run experiments on the 5-core Amazon Baby, Sports, and Clothing datasets evaluate Recall@10/20 and NDCG@10/20 with memory and model parameters frozen at test time; R@20 is 0.1079, 0.1231, and 0.1071, and all 12 main-table gains are reported significant at p<0.05. The cost is shifted into offline knowledge construction—86,535, 180,222, and 210,293 LLM calls across the three datasets—so deployment economics depend on how long the memory can be reused."
+          }
+        },
+        {
+          "year": 2026,
           "title": "When Memory Takes Gradients: Collaborative Vector Memory for Agentic Recommender Systems",
           "paperUrl": "https://arxiv.org/abs/2608.26895",
           "venue": "arXiv 2026",
@@ -100,6 +120,26 @@
           "details": {
             "abstractZh": "MMEACR 用双轨记忆解决推荐 Agent 的文本中心化与粗粒度更新问题。推理轨由 User Memory Agent 与 Item Memory Agent 维护持久语义状态，并在正负物品交互后通过属性引导的 reinforcement-and-reflection 更新用户与物品记忆；匹配轨保留原始交互叙事和物品图像的细粒度多模态 embedding，最终以加权 RRF 融合两路排名。实验在 Amazon Reviews 的 CDs、Cell Phones 与 Fashion 三个域上、每域 100 用户和 500 次交互、五个随机种子评测；相对最强基线，MMEACR-RRF 在 Cell Phones 的 NDCG@1/@5 提升 14.3%/21.26%，在 Fashion 的 NDCG@1/@5 与 MRR 提升 45.45%/23.33%/27.14%。",
             "abstractEn": "MMEACR addresses text-centric and coarse-grained memory updates in recommendation agents with a dual-track design. In the reasoning track, persistent User and Item Memory Agents update semantic states after positive/negative item interactions through attribute-guided reinforcement and reflection; the matching track preserves fine-grained multimodal evidence from raw interaction narratives and item images, and weighted reciprocal rank fusion combines both rankings. Experiments on the Amazon Reviews CDs, Cell Phones, and Fashion domains use 100 users and 500 interactions per domain over five random seeds; versus the strongest baseline, MMEACR-RRF improves NDCG@1/@5 by 14.3%/21.26% on Cell Phones and improves NDCG@1/@5 and MRR by 45.45%/23.33%/27.14% on Fashion."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "EvoRec: Self Evolving Agentic Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2606.28368",
+          "venue": "arXiv 2026",
+          "authors": ["Lingyu Mu", "Hao Deng", "Haibo Xing", "Jinxin Hu", "Yu Zhang", "Xiaoyi Zeng"],
+          "institutions": ["Alibaba International Digital Commerce Group"],
+          "firstPublished": "2026-06-15",
+          "arxivId": "2606.28368",
+          "doi": "10.48550/arXiv.2606.28368",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "Self-Evolution", "Persistent Memory", "Online A/B"],
+          "description": "An Orchestrator coordinates research, code, and skill-evolution agents across hypothesis, implementation, training, validation, and structured experience write-back for continual recommender improvement.",
+          "detailId": "2606.28368",
+          "details": {
+            "abstractZh": "EvoRec 由 Orchestrator 编排 Research Agent、Code Agent 与 Skill Evolver，把推荐系统迭代组织成 hypothesis→代码修改→训练→验证→结构化轨迹持久化的闭环；每五轮从成功、失败和中性记录中蒸馏 Research、Engineering、Diagnosis 三类技能。离线实验覆盖 Amazon Books 与一个约 29.5 亿交互、1470 万用户、2010 万物品的东南亚工业电商数据集，对 MGUI 和 REG4Rec 最多自迭代 50 轮，最高相对最强基线提升 5.54%。广告推荐平台七天线上 A/B 报告 revenue +1.85%、CTR +1.02%（双侧检验 p<0.05）；去掉 Skill Evolution、Memory 或外部知识会使工业数据上的 Evo-MGUI R@10 分别下降 2.10%、3.50% 和 1.58%。",
+            "abstractEn": "EvoRec has an Orchestrator coordinate Research, Code, and Skill-Evolution agents through a hypothesis→code modification→training→validation→structured trajectory persistence loop; every five rounds, successful, failed, and neutral records are distilled into Research, Engineering, and Diagnosis skills. Offline evaluation covers Amazon Books and an industrial Southeast Asian e-commerce dataset with roughly 2.95 billion interactions, 14.7 million users, and 20.1 million items, self-iterating MGUI and REG4Rec for up to 50 rounds and reaching a maximum 5.54% relative gain over the strongest baseline. A seven-day online A/B test on an advertising recommender reports +1.85% revenue and +1.02% CTR (two-sided p<0.05); removing Skill Evolution, Memory, or external knowledge lowers industrial Evo-MGUI R@10 by 2.10%, 3.50%, and 1.58%, respectively."
           }
         },
         {
@@ -251,6 +291,26 @@
       "entries": [
         {
           "year": 2026,
+          "title": "Headroom-Drift Replay: A Primitive for Principled Replay Control in GRPO",
+          "paperUrl": "https://arxiv.org/abs/2609.03941",
+          "venue": "COLM 2026",
+          "authors": ["Hyun Bin Park", "Du-Seong Chang"],
+          "institutions": ["Department of Artificial Intelligence, Sogang University"],
+          "firstPublished": "2026-09-03",
+          "arxivId": "2609.03941",
+          "doi": "10.48550/arXiv.2609.03941",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Agentic Search", "Replay", "GRPO", "Trajectory RL"],
+          "description": "Separates replay control into Headroom-based learning-value prioritization and Policy-Drift compatibility gating, reusing full search-trajectory groups to reduce costly fresh environment interaction.",
+          "detailId": "2609.03941",
+          "details": {
+            "abstractZh": "Headroom-Drift Replay 针对搜索 Agent 的 GRPO 训练中环境交互耗时高、历史轨迹易过时的问题，把 replay 拆成两个独立控制量：Headroom 按剩余学习价值排序完整 rollout group，Policy Drift 则过滤与当前策略不兼容的旧轨迹。Search-R1 实验覆盖 NQ、TriviaQA、PopQA、HotpotQA、2WikiMultiHopQA、MuSiQue 和 Bamboogle；3B 设置下相对扩大 fresh rollout 的 on-policy GRPO，Avg Mean@32 从 0.3212 提升至 0.3577，同时单步时间从 197.2 秒降至 166.3 秒。7B 单次受控对比中，Avg Mean@4 从普通 replay 的 0.3737 提升到 0.3955，并在七个基准中的六个领先；论文已被 COLM 2026 接收，但作者明确说明该 7B 比较每种方法只有一次运行。",
+            "abstractEn": "Headroom-Drift Replay addresses expensive environment interaction and stale trajectories in GRPO-trained search agents by splitting replay into two controls: Headroom ranks complete rollout groups by remaining learning value, while Policy Drift rejects groups incompatible with the current policy. Search-R1 experiments cover NQ, TriviaQA, PopQA, HotpotQA, 2WikiMultiHopQA, MuSiQue, and Bamboogle; in the 3B setting, it improves Avg Mean@32 from 0.3212 for larger-budget on-policy GRPO to 0.3577 while reducing mean step time from 197.2 to 166.3 seconds. In a single-run controlled 7B comparison, Avg Mean@4 rises from 0.3737 with ordinary replay to 0.3955 and leads on six of seven benchmarks; the paper is accepted at COLM 2026, but explicitly limits that 7B comparison to one run per method."
+          }
+        },
+        {
+          "year": 2026,
           "title": "From Inertia to Objectivity: Improving Deep Research Agents with Noise Isolation",
           "paperUrl": "https://arxiv.org/abs/2608.23045",
           "venue": "EMNLP 2026",
@@ -267,6 +327,46 @@
           "details": {
             "abstractZh": "NIS-Agent 针对长程搜索中错误证据被上下文惯性反复放大的问题，构建 Manager–Worker 深度研究闭环：SearchAgent 在隔离上下文中判断网页相关性，证据不足时自适应改写 query；ManagerAgent 重组执行历史，并独立验证 premise→conclusion 推理链后决定继续检索或终止。论文还以 SFT+GRPO 训练 NIS-8B 的检索后工具决策，在 GAIA 全量验证集及 WebWalkerQA、BrowseComp、BrowseComp-zh 子集上评测；DeepSeek-V4-Pro 配置的 GAIA/WebWalkerQA 为 81.21/75.00，GPT-4o 配置在 GAIA 上把每题总 token 从 219.8k 降至 147.3k（-33.0%）。GPT-4o 消融中完整系统为 61.82，去掉隔离过滤或独立验证后分别降至 59.39 和 56.96；这些均为作者报告结果。",
             "abstractEn": "NIS-Agent addresses context inertia in long-horizon search with a manager–worker deep-research loop. Its SearchAgent triages webpages in an isolated context and adaptively rewrites the query when evidence is insufficient, while the ManagerAgent reorganizes execution history and independently validates premise-to-conclusion steps before continuing or terminating. The paper also trains NIS-8B with SFT plus GRPO for post-search tool decisions and evaluates on the full GAIA validation set plus WebWalkerQA, BrowseComp, and BrowseComp-zh samples; the DeepSeek-V4-Pro configuration reports 81.21 on GAIA and 75.00 on WebWalkerQA, while the GPT-4o configuration reduces GAIA tokens per query from 219.8k to 147.3k (−33.0%). In GPT-4o ablations, the full system scores 61.82 versus 59.39 without the isolated filter and 56.96 without independent validation; all figures are author-reported."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Spurious Advantage Hidden in GRPO",
+          "paperUrl": "https://arxiv.org/abs/2609.04063",
+          "venue": "arXiv 2026",
+          "authors": ["Jiamian Wang", "Samyadeep Basu", "Koustava Goswami", "Tong Yu", "Zhiqiang Tao"],
+          "institutions": ["Rochester Institute of Technology", "Adobe Research"],
+          "firstPublished": "2026-09-03",
+          "arxivId": "2609.04063",
+          "doi": "10.48550/arXiv.2609.04063",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Agentic Search", "GRPO", "Advantage Estimation", "Trajectory RL"],
+          "description": "Identifies guess-driven spurious advantage in outcome-only GRPO for multi-turn search and replaces count-dependent magnitudes with SignBalance's globally scaled, per-class-balanced estimator.",
+          "detailId": "2609.04063",
+          "details": {
+            "abstractZh": "该工作指出，使用终点 exact-match 奖励的多轮搜索 Agent 会把通过猜测得到正确答案的轨迹与真正有效的 query/action 路径赋予相同 GRPO advantage magnitude，搜索预算越大，这种 spurious advantage 越容易被放大。SignBalance 保留 verifier 的正负号，以全局尺度替代组内计数依赖，并用 stop-gradient 的分类重标定恢复零均值平衡；Search-R1 设定使用 Qwen2.5-7B-Instruct、最多四次搜索调用，并在六个单跳/多跳 QA 基准上评测。其 Avg-6 exact-match 为 37.80，高于 StepSearch 的 36.44 和 Search-R1 的 36.00；2WikiMultiHopQA 相对 Search-R1 从 27.58 提升至 35.20，但 MuSiQue 仍落后于采用 step-level reward shaping 的 StepSearch。",
+            "abstractEn": "This work shows that multi-turn search agents trained with endpoint exact-match rewards give the same GRPO advantage magnitude to trajectories that guess the correct answer and trajectories that follow effective query/action paths, with larger search budgets increasing the surface for this spurious advantage. SignBalance retains the verifier sign, replaces group-composition-dependent magnitude with a global scale, and restores zero-mean balance through stop-gradient per-class rescaling; its Search-R1 setting uses Qwen2.5-7B-Instruct, up to four search calls, and six single- and multi-hop QA benchmarks. It reaches 37.80 Avg-6 exact match versus 36.44 for StepSearch and 36.00 for Search-R1, improving 2WikiMultiHopQA from Search-R1's 27.58 to 35.20, while still trailing StepSearch on MuSiQue where step-level reward shaping is used."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "SciLENS: RL-Driven Autonomous Agents for Scientific Localized Evidence Navigation and Synthesis",
+          "paperUrl": "https://arxiv.org/abs/2609.03338",
+          "venue": "arXiv 2026",
+          "authors": ["Leqi Zheng", "Jinbo Su", "Yuying Li", "Chaokun Wang", "Weiping Wang", "Haitao Li", "Jiajun Zhang", "Shannan Yan", "Zhaolu Kang", "Rong Fu", "Jie Wu", "Fang Niu", "Hang Zhang"],
+          "institutions": ["Tsinghua University", "Renmin University of China", "Institute of Information Engineering, Chinese Academy of Sciences", "University of Science and Technology of China", "Peking University", "University of Macau", "The Australian National University"],
+          "firstPublished": "2026-09-03",
+          "arxivId": "2609.03338",
+          "doi": "10.48550/arXiv.2609.03338",
+          "resource": { "label": "Code", "url": "https://github.com/LQgdwind/SciLENS" },
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Scientific Search", "Tool Use", "Citation Graph", "Evidence Synthesis"],
+          "description": "A fully local scientific-search agent navigates 12 million records with a 12-tool research environment, citation-graph planning, structural visualization actions, and evidence-grounded process rewards.",
+          "detailId": "2609.03338",
+          "details": {
+            "abstractZh": "SciLENS 在约 1200 万条论文记录的本地 MongoDB、BM25、citation tracking 与分布式 FAISS 环境中运行连续 thought→action→observation 搜索循环，并把检索、引用图遍历、指标整理和经 schema 校验的结构图生成统一为 12 个工具。Qwen3-30B-A3B 先在约 2 万条由 DeepSeek-V3.2 蒸馏且交叉验证的完整轨迹上 SFT，再用强调早期规划和严格证据落地的 rubric process reward 做 RL。六个科学搜索/推理/结构综合基准、五次运行中，QASA/SciFact/PubMedQA/ScholarQA-CS correctness 为 47.62/88.94/77.53/73.98，SSB/SciFR overall 为 0.7607/0.7594；去掉 retrieval 与 graph 后相应六项降至 7.15/15.12/11.05/6.21/0.1902/0.1144。",
+            "abstractEn": "SciLENS runs a continuous thought→action→observation search loop over a fully local environment of roughly 12 million papers backed by MongoDB, BM25, citation tracking, and distributed FAISS, exposing retrieval, citation-graph traversal, metric structuring, and schema-validated visualization through 12 tools. A Qwen3-30B-A3B policy is first SFT-trained on about 20,000 complete DeepSeek-V3.2-distilled and cross-verified trajectories, then optimized with rubric process rewards emphasizing early planning and strict evidence grounding. Across six scientific search, reasoning, and structural-synthesis benchmarks over five runs, QASA/SciFact/PubMedQA/ScholarQA-CS correctness is 47.62/88.94/77.53/73.98 and SSB/SciFR overall is 0.7607/0.7594; removing retrieval and graph capabilities drops the same six scores to 7.15/15.12/11.05/6.21/0.1902/0.1144."
           }
         },
         {
@@ -351,6 +451,26 @@
         },
         {
           "year": 2026,
+          "title": "Marco DeepResearch: Unlocking Efficient Deep Research Agents via Verification-Centric Design",
+          "paperUrl": "https://arxiv.org/abs/2603.28376",
+          "venue": "arXiv 2026",
+          "authors": ["Bin Zhu", "Qianghuai Jia", "Tian Lan", "Junyang Ren", "Feng Gu", "Feihu Jiang", "Longyue Wang", "Zhao Xu", "Weihua Luo"],
+          "institutions": ["Alibaba International Digital Commerce"],
+          "firstPublished": "2026-03-30",
+          "arxivId": "2603.28376",
+          "doi": "10.48550/arXiv.2603.28376",
+          "resource": { "label": "Code", "url": "https://github.com/AIDC-AI/Marco-DeepResearch" },
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Deep Research", "Multi-Agent", "Verification", "Test-Time Scaling"],
+          "description": "A main agent, search sub-agent, and independent verifier construct corrected tool-use trajectories, while inference resets degraded contexts and verifies candidate answers under a fixed search budget.",
+          "detailId": "2603.28376",
+          "details": {
+            "abstractZh": "Marco DeepResearch 把验证贯穿数据、训练与推理：Main Agent 分解问题，Search Sub-Agent 调用 web 工具，独立 Verifier 对子任务和最终答案验收；失败会触发 revision、重执行和 verification-reflection re-rollout。Qwen3-8B 在超过 1.2 万条合成 QA 与验证轨迹上 SFT，并用 2000 余条留出数据做 outcome-reward GRPO；推理时 Discard All 清空退化上下文，独立检查多个候选，再由 Joint Verify 在固定工具预算内给出答案。六个 deep-search 基准中，Discard All+Verify 相对基础 SFT+RL 在 GAIA/xBench-2505/BrowseComp-200/BrowseComp-ZH 上从 61.2/75.0/17.3/29.3 提升到 69.9/82.0/32.3/47.1，但当前仍是 arXiv 预印本。",
+            "abstractEn": "Marco DeepResearch makes verification central to data, training, and inference: a Main Agent decomposes questions, a Search Sub-Agent uses web tools, and an independent Verifier checks subtasks and final answers, with failures triggering revision, re-execution, and verification-reflection re-rollouts. Qwen3-8B receives SFT on more than 12,000 synthesized QA examples and verified trajectories followed by outcome-reward GRPO on over 2,000 held-out examples; at inference, Discard All resets degraded contexts, candidate answers are independently checked, and Joint Verify selects the final answer under a fixed tool budget. Across six deep-search benchmarks, Discard All+Verify improves GAIA/xBench-2505/BrowseComp-200/BrowseComp-ZH from 61.2/75.0/17.3/29.3 for base SFT+RL to 69.9/82.0/32.3/47.1, although the work remains an arXiv preprint."
+          }
+        },
+        {
+          "year": 2026,
           "title": "LegalMALR: Multi-Agent Query Understanding and LLM-Based Reranking for Chinese Statute Retrieval",
           "paperUrl": "https://arxiv.org/abs/2601.17692",
           "venue": "arXiv 2026",
@@ -362,6 +482,26 @@
           "details": {
             "abstractZh": "LegalMALR 在一个系统中同时实现多 Agent query understanding 与 LLM reasoning reranker。前级 MAS 从不同法律视角对隐含、多问题、口语化 query 进行 reformulation，并迭代调用 dense retriever 扩充候选；统一 MAS policy 通过 GRPO 优化以降低多 Agent rewrite 的随机性，最后交给 LLM Reranker 用自然语言法律推理判断法条适用性。作者还构建了含 118 个困难中文法律查询的 CSAID，并与公开 STARD 一起评测；LegalMALR 在 ID 与 OOD 设置均显著超过强 RAG 基线。虽然场景是法条检索，但架构非常接近工业搜索未来的 'query-agent → retrieval → reasoning rerank' pipeline。",
             "abstractEn": "LegalMALR implements multi-agent query understanding and LLM reasoning reranking in a single system. A front-end MAS reformulates implicit, multi-issue, colloquial queries from different legal perspectives and iteratively expands candidates with a dense retriever; a unified MAS policy optimized via GRPO reduces randomness in multi-agent rewriting; a final LLM Reranker applies natural-language legal reasoning for statute applicability judgment. The authors also build CSAID with 118 hard Chinese legal queries, evaluating alongside STARD; LegalMALR significantly outperforms strong RAG baselines on both ID and OOD settings. Though focused on statute retrieval, the architecture closely mirrors a future industrial 'query-agent → retrieval → reasoning rerank' pipeline."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Agentic-R: Learning to Retrieve for Agentic Search",
+          "paperUrl": "https://arxiv.org/abs/2601.11888",
+          "venue": "arXiv 2026",
+          "authors": ["Wenhan Liu", "Xinyu Ma", "Yutao Zhu", "Yuchen Li", "Daiting Shi", "Dawei Yin", "Zhicheng Dou"],
+          "institutions": ["Gaoling School of Artificial Intelligence, Renmin University of China", "Baidu Inc."],
+          "firstPublished": "2026-01-17",
+          "arxivId": "2601.11888",
+          "doi": "10.48550/arXiv.2601.11888",
+          "resource": { "label": "Code", "url": "https://github.com/8421BCD/Agentic-R" },
+          "trainingMethods": ["RL"],
+          "tags": ["Agent-Retriever Co-Training", "Tool Use", "Multi-Step Retrieval", "Trajectory RL"],
+          "description": "Alternates PPO training of a multi-turn search agent with contrastive retriever updates from its trajectories, optimizing passage utility for both local query relevance and final-answer correctness.",
+          "detailId": "2601.11888",
+          "details": {
+            "abstractZh": "Agentic-R 不把 retriever 当作固定工具，而是在两轮双向优化中交替训练搜索 Agent 与检索器：Qwen2.5-7B Agent 以 PPO 学习最多五轮 reasoning→query→retrieval，检索器再从新轨迹中以局部 query relevance 与全局最终答案正确性联合定义 passage utility 做对比学习。实验覆盖 HotpotQA、2WikiMultiHopQA、MuSiQue、Bamboogle、NQ、TriviaQA、PopQA，并用 2018-12 Wikipedia 对 E5 初始化的检索器训练。域内 Agent 的平均 EM 为 45.00，高于最强列出基线 REPLUG 的 41.78；去掉全局正确性或局部相关性平均 EM 约下降 1.1/1.7 点，相比 REPLUG 在 HotpotQA/TriviaQA 的平均搜索轮数约减少 10%/15%。",
+            "abstractEn": "Agentic-R does not treat the retriever as a fixed tool. In two rounds of bidirectional optimization, a Qwen2.5-7B search agent learns up to five reasoning→query→retrieval turns with PPO, while the retriever is contrastively updated from the agent's new trajectories using passage utility that combines local query relevance with global final-answer correctness. Evaluation spans HotpotQA, 2WikiMultiHopQA, MuSiQue, Bamboogle, NQ, TriviaQA, and PopQA, training an E5-initialized retriever over a December 2018 Wikipedia corpus. With the in-domain agent, average EM is 45.00 versus 41.78 for the strongest listed baseline REPLUG; removing global correctness or local relevance lowers average EM by about 1.1/1.7 points, and average search turns fall by roughly 10%/15% on HotpotQA/TriviaQA versus REPLUG."
           }
         },
         {
@@ -401,6 +541,46 @@
       "name": "Advertising",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "DMRL: Document-Mediated Reinforcement Learning for Skill Optimization in Advertising Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2609.02170",
+          "venue": "arXiv 2026",
+          "authors": ["Wei Zhang", "Hongji Li", "Song Sun", "Peng Yu", "Xue Yang", "Lei Zhao", "Peng Jiang"],
+          "institutions": ["Shanghai Jiao Tong University", "Kuaishou Technology"],
+          "firstPublished": "2026-09-02",
+          "arxivId": "2609.02170",
+          "doi": "10.48550/arXiv.2609.02170",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Skill Evolution", "Advertising Recommendation", "Long-Term Reward", "Online A/B"],
+          "description": "A bilevel closed loop trains an upper agent to edit advertising-control skill documents while a frozen lower agent executes bounded parameter interventions and online A/B outcomes drive delayed-reward policy updates.",
+          "detailId": "2609.02170",
+          "details": {
+            "abstractZh": "DMRL 将广告推荐参数优化建模为双层 Agent 闭环：上层 Qwen3 优化器把 skill document 的修改拆成结构化原子编辑，下层冻结的任务 Agent 只在参数白名单和值域内调用工具执行干预，再由在线 A/B 结果反哺下一轮编辑。DRPO 同时比较 rollout 组内的稳健 MAD advantage 与 treatment-control reward，并惩罚编辑幅度；LRP 用约 1200 万条按时间切分的用户轨迹、群体解耦表示和历史 memory bank，从 1 日信号预测 7 日长期结果。一个未具名的大规模短视频广告平台实验中，完整 DMRL 的 AUD@1d/PES@1d/AUD@7d/PES@7d/LTV 变化为 -0.020%/+0.644%/+0.082%/+0.960%/+0.052%，LTV 高于最佳对比 SkillOpt 的 +0.024%；作者机构含快手科技，但原文未指明部署平台，且该收益伴随短期 AUD 轻微下降。",
+            "abstractEn": "DMRL formulates advertising-recommendation parameter optimization as a bilevel agent loop: an upper-level Qwen3 optimizer turns skill-document revisions into structured atomic edits, while a frozen task agent invokes tools only within a whitelist of parameters and value ranges, and online A/B outcomes feed the next edit cycle. DRPO combines robust MAD-normalized within-group advantage, treatment-control reward, and an edit-cost penalty; LRP uses roughly 12 million chronologically split user trajectories, disentangled population representations, and a historical memory bank to predict seven-day outcomes from one-day signals. On an unnamed large-scale short-video advertising platform, full DMRL reports AUD@1d/PES@1d/AUD@7d/PES@7d/LTV changes of −0.020%/+0.644%/+0.082%/+0.960%/+0.052%, versus +0.024% LTV for the strongest SkillOpt comparison; authors are affiliated with Kuaishou Technology, but the paper does not identify the deployed platform, and short-term AUD declines slightly."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "LangBP: Language-Guided Reasoning and Acting for Joint Bidding and Pricing",
+          "paperUrl": "https://arxiv.org/abs/2608.30343",
+          "venue": "arXiv 2026",
+          "authors": ["Jiaqi Ding", "Chuan Yang", "Linghui Meng", "Shengsheng Niu", "Jie He", "Zhangang Lin", "Ching Law", "Xiaolin Fang"],
+          "institutions": ["Southeast University", "JD.com"],
+          "firstPublished": "2026-08-31",
+          "arxivId": "2608.30343",
+          "doi": "10.48550/arXiv.2608.30343",
+          "resource": null,
+          "trainingMethods": ["SFT", "RL"],
+          "tags": ["Auto-Bidding", "Hierarchical Planning", "Pricing", "Online A/B"],
+          "description": "A high-level language policy plans campaign strategy while a Semantic Decision Transformer executes joint bidding/pricing actions, with effect verification and execution-grouped policy optimization closing the control loop.",
+          "detailId": "2608.30343",
+          "details": {
+            "abstractZh": "LangBP 把联合出价与定价拆成语言引导的层级控制：高层 instruction policy 生成解释、bidding direction 和 pricing strength，低层 Semantic Decision Transformer 根据指令与轨迹历史预测目标状态变化，再由 inverse dynamics 还原连续动作。Context–Effect Verifier 从历史行为支持度校验策略效果，Execution-Grouped Policy Optimization 按语义相近的 effect 分组分配 credit；离线在 AuctionNet/AuctionNet-Sparse 的 48 个广告主、五档预算、五次运行上评测，dense 设置相对 JD-BP 提升约 4.2%–6.5%。一个未具名大型电商广告平台的七天线上 A/B 报告 Ad Click +2.59%、Ad Cost +1.86%、Ad Value +3.34%、Achievement +1.83 个百分点；作者机构含 JD.com，但原文未据此声称部署平台就是京东。",
+            "abstractEn": "LangBP decomposes joint bidding and pricing into language-guided hierarchical control: a high-level instruction policy emits an explanation, bidding direction, and pricing strength; a low-level Semantic Decision Transformer predicts target state changes from that instruction and trajectory history, and inverse dynamics recovers continuous actions. A Context–Effect Verifier checks whether effects are supported by behavior, while Execution-Grouped Policy Optimization assigns credit among semantically similar effects; offline evaluation spans 48 advertisers, five budget ratios, and five runs on AuctionNet/AuctionNet-Sparse, with roughly 4.2%–6.5% gains over JD-BP in the dense setting. A seven-day online A/B test on an unnamed large-scale e-commerce advertising platform reports +2.59% Ad Click, +1.86% Ad Cost, +3.34% Ad Value, and +1.83 percentage points Achievement; JD.com is an author affiliation, but the paper does not identify the deployed platform as JD."
+          }
+        },
         {
           "year": 2026,
           "title": "Fine-Tuning Autobidders with Group Relative Policy Optimization",
@@ -483,6 +663,26 @@
         },
         {
           "year": 2026,
+          "title": "AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization",
+          "paperUrl": "https://arxiv.org/abs/2607.17281",
+          "venue": "arXiv 2026",
+          "authors": ["Yuejia Dou", "Hesong Wang", "Xinyu Zhang", "Tianyu Wang", "Zhilin Zhang", "Chuan Yu", "Jian Xu", "Bo Zheng", "Qi Qi"],
+          "institutions": ["Gaoling School of Artificial Intelligence, Renmin University of China", "Alibaba Group"],
+          "firstPublished": "2026-07-19",
+          "arxivId": "2607.17281",
+          "doi": "10.48550/arXiv.2607.17281",
+          "resource": null,
+          "trainingMethods": ["RL"],
+          "tags": ["Auto-Bidding", "Hierarchical Planning", "Memory", "Planner-Executor RL"],
+          "description": "A 32B Planner writes period-level strategies into task memory while a lightweight Prompt Decision Transformer executes bids; decoupled GRPO optimizes both roles from interactive auction trajectories.",
+          "detailId": "2607.17281",
+          "details": {
+            "abstractZh": "AIGB-R1 用 Qwen2.5-32B-Instruct Planner 每个投放周期读取广告主上下文和历史表现，生成结构化宏观策略；六层 Prompt Decision Transformer Executor 再结合 RTG/state/action 轨迹输出细粒度 bidding parameters。AuctionNetEnv 提供交互式二价拍卖 rollout，每个任务的 memory 同时保留 best-strategy anchor 与 FIFO window，Decoupled GRPO 则分别计算 Planner 和 Executor advantage 并端到端优化两者。AuctionNet/AuctionNet-Sparse 上的 Score 为 385±3.61/39.0±0.37，高于下一名 376/38.1；静态 Planner 或不训练 Executor 时 dense Score 降至 371/343，但全部证据来自公开数据与模拟器，论文不声称生产 A/B。",
+            "abstractEn": "AIGB-R1 uses a Qwen2.5-32B-Instruct Planner to read advertiser context and historical performance once per delivery period and emit a structured macro strategy; a six-layer Prompt Decision Transformer Executor combines that prompt with return-to-go/state/action history to produce fine-grained bidding parameters. AuctionNetEnv supplies interactive second-price-auction rollouts, task memory retains both a best-strategy anchor and FIFO window, and Decoupled GRPO computes separate Planner and Executor advantages while optimizing both end to end. Scores on AuctionNet/AuctionNet-Sparse are 385±3.61 and 39.0±0.37 versus 376 and 38.1 for the next-best methods; dense Score drops to 371 with a static Planner and 343 without Executor RL, but all evidence comes from public data and simulation rather than production A/B tests."
+          }
+        },
+        {
+          "year": 2026,
           "title": "HOBA: Hierarchical On-Policy Bidding Agents for Adaptive Online Advertising",
           "paperUrl": "https://arxiv.org/abs/2607.24779",
           "venue": "KDD 2026",
@@ -523,6 +723,26 @@
       "name": "Industry Deployments",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "CORAL: An LLM-Native Harness for Production Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2609.02730",
+          "venue": "RecSys 2026 OARS Workshop",
+          "authors": ["Muhammad Rafay Azhar", "Yuhang Zhou", "Gilbert Jiang", "Yuchen Wang", "Rahul Sharma", "Matthew DeSousa", "Jiayi Liu", "Xin Guo", "Lizhu Zhang", "Xiangjun Fan"],
+          "institutions": ["Meta AI"],
+          "firstPublished": "2026-09-02",
+          "arxivId": "2609.02730",
+          "doi": "10.48550/arXiv.2609.02730",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "Persistent Memory", "Tool Use", "Constrained Optimization", "Online A/B"],
+          "description": "Meta's continual recommender-control loop observes live telemetry, retrieves recent decision outcomes from memory, invokes a budget-feasibility optimizer, deploys the configuration, and writes measured A/B effects back into the next cycle.",
+          "detailId": "2609.02730",
+          "details": {
+            "abstractZh": "CORAL 是 Meta 面向生产推荐控制面的持续闭环：每三天读取 live telemetry 和最近三轮 observation/assessment/decision memory，依次分析状态、归因上轮效果、提出新配置，并调用确定性数值优化器把动作投影到预算可行域；上线后的 A/B 结果再写回 memory，无需参数更新。首个覆盖数百万用户的视频推荐部署将固定总量的 retrieval budget 在召回源间重分配，第三轮使 sessions +0.16%、watch time +0.15%，新低信号用户 sessions +0.23%，且不增加 serving cost。第二个平台部署在保持 engagement 统计不变的同时节省数百万美元年化算力，并在下一轮把节省幅度再提高 44%；论文未公开绝对节省值，系统仍处于自动执行加人工监督、逐步由 guardrail 接管的阶段。",
+            "abstractEn": "CORAL is Meta's continual control loop for production recommenders. Every three days it reads live telemetry and three recent cycles of observation, assessment, and decision memory; it analyzes state, attributes the prior outcome, proposes a configuration, and invokes a deterministic numerical optimizer that projects actions into the budget-feasible set, after which A/B results are written back without parameter updates. In a video-recommendation deployment spanning millions of users, reallocating a fixed retrieval budget reaches +0.16% sessions and +0.15% watch time in the third round, with +0.23% sessions for new low-signal users and no added serving cost. A second platform saves millions of dollars in annualized capacity with statistically unchanged engagement and expands those savings by 44% in the next round; the paper does not disclose the absolute savings, and operation remains autonomous execution under human supervision with progressively stronger automated guardrails."
+          }
+        },
         {
           "year": 2026,
           "title": "A/B Agent: A Self-Evolving Agent for Strategy Iteration in Industrial A/B Testing",

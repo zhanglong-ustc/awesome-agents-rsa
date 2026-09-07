@@ -1,5 +1,17 @@
 # Literature Audit Log
 
+## 2026-09-07
+
+- Scope: incremental primary-source search for 2025-01-01 through 2026-09-07 across agentic recommendation, search, advertising, and major-platform deployments, with priority on work first posted after the previous run at 2026-09-02 01:43 UTC and explicit backlog rechecks.
+- Retrieval: `research-lit` read-only fan-out over recommendation, search, and advertising/industry plus a direct arXiv API time-window query, followed by arXiv abstract/history and full-HTML checks. No local PDFs, Zotero, or Obsidian sources were available; `arxiv_fetch.py` and `verify_papers.py` were unresolved, so official arXiv API metadata and first-party full text supplied the deterministic metadata and evidence checks.
+- Candidates: 32 unique candidates after mechanical arXiv-ID/DOI/normalized-title de-duplication. Fully verified and added: 11. Corrected: 0. Removed: 0. The main collection increased from 39 to 50 entries.
+- Added recommendation: AgentMMRec (`2608.29410`) for multi-agent multimodal knowledge memory and EvoRec (`2606.28368`) for Alibaba's persistent experiment-memory recommender evolution loop.
+- Added search: Headroom-Drift Replay (`2609.03941`, COLM 2026), SignBalance (`2609.04063`), SciLENS (`2609.03338`), Marco DeepResearch (`2603.28376`), and Agentic-R (`2601.11888`). Together they cover search-trajectory replay, advantage-estimator bias, local scientific-search tools, verification-centric deep research, and agent–retriever co-training.
+- Added advertising: DMRL (`2609.02170`; authors from Shanghai Jiao Tong University and Kuaishou Technology) for document-mediated skill RL with delayed online reward, LangBP (`2608.30343`) for hierarchical joint bidding/pricing, and AIGB-R1 (`2607.17281`) for planner–executor optimization in an interactive auction simulator. DMRL's deployment platform is unnamed in the paper.
+- Added industry deployment: Meta CORAL (`2609.02730`, RecSys 2026 OARS Workshop), a persistent-memory and constrained-tool loop evaluated by production A/B tests on two large-scale social recommender surfaces.
+- Primary sources: official arXiv API, abstract/history pages, and arXiv HTML full text for every added entry. Venue claims are limited to explicit first-party records; no unnamed deployment is attributed to an author's employer, and simulation-only AIGB-R1 is not described as production evidence.
+- Verification: titles, complete author lists, institutions, first publication dates, venue status, agent architecture, experimental settings, original metrics, arXiv/DOI links, normalized titles/URLs/detail IDs, and explicit limitations were checked. Remaining candidates were not promoted when the fit was less direct, complete institution metadata was unavailable, or the work primarily improved a component without completing the same repository-level curation package.
+
 ## 2026-09-01
 
 - Scope: incremental primary-source search for 2025-01-01 through 2026-09-01 across agentic recommendation, search, advertising, and major-platform deployments.
