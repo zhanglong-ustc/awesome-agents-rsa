@@ -9,6 +9,66 @@
       "entries": [
         {
           "year": 2026,
+          "title": "HyperTrace: Hypothesis-Based Preference Tracing for Online LLM Personalization",
+          "paperUrl": "https://arxiv.org/abs/2609.09835",
+          "venue": "Findings of EMNLP 2026",
+          "authors": ["Jianzhi Shen", "Keyu Mao", "Minghao Shao", "Chuanyang Jin", "Yusong Wang", "Ailiang Lin", "Kotaro Funakoshi", "Manabu Okumura", "Tianmin Shu", "Muhammad Shafique"],
+          "institutions": ["Johns Hopkins University", "Institute of Science Tokyo", "NYU Tandon School of Engineering", "New York University Abu Dhabi"],
+          "firstPublished": "2026-09-09",
+          "arxivId": "2609.09835",
+          "doi": "10.48550/arXiv.2609.09835",
+          "resource": { "label": "Code", "url": "https://github.com/jiseshen/HyperTrace" },
+          "trainingMethods": ["Training-free"],
+          "tags": ["User Modeling", "Persistent Memory", "Preference Tracing", "Online Personalization"],
+          "description": "Maintains competing natural-language preference hypotheses, updates them from comparative feedback with sequential Monte Carlo, and consolidates topic-conditioned evidence into cross-session user memory.",
+          "detailId": "2609.09835",
+          "details": {
+            "abstractZh": "HyperTrace 把在线用户画像建模为一组并行的自然语言偏好假设：系统从显式比较选择中用 LLM surrogate 计算证据并执行类似 sequential Monte Carlo 的重加权，在反馈信息不足时跳过更新，在主题切换时检索相关假设并把跨会话证据巩固进持久 memory。实验从 PRISM 与 PersonaMem-v2 各取 50 个合格用户（分别 1,206 与 1,335 轮），固定 GPT-5 backbone，评测偏好预测、回复对齐和画像对齐；PRISM 的 Acc>20 为 0.6136，对比 Dynamic Cheatsheet 的 0.5436，PersonaMem-v2 为 0.3768 对比 0.3035。Hybrid 配置以每轮 0.0131 美元保留 95.8% 的准确率并降低 53.1% 成本，但它仍是基于公开数据集和显式比较反馈的通用个性化研究，而非线上推荐排序系统，PersonaMem-v2 的回复对齐也未稳定改善。",
+            "abstractEn": "HyperTrace represents an online user profile as competing natural-language preference hypotheses. It scores comparative feedback with an LLM surrogate, performs sequential-Monte-Carlo-style reweighting, skips uninformative turns, retrieves hypotheses by topic, and consolidates evidence into persistent cross-session memory. Experiments use 50 eligible users each from PRISM and PersonaMem-v2 (1,206 and 1,335 turns) with a fixed GPT-5 backbone: Acc>20 reaches 0.6136 versus 0.5436 for Dynamic Cheatsheet on PRISM and 0.3768 versus 0.3035 on PersonaMem-v2. A hybrid configuration retains 95.8% of accuracy at $0.0131 per turn, 53.1% cheaper, but this remains offline general personalization from explicit comparisons rather than an online ranking deployment, and response alignment does not improve consistently on PersonaMem-v2."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "An Efficient and Effective Agentic Group Shilling Attack on Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2609.09551",
+          "venue": "ICDM 2026",
+          "authors": ["Quoc Viet Nguyen", "Trinh Pham", "Viet Huynh", "Hongzhi Yin", "Quoc Viet Hung Nguyen", "Bay Vo", "Thanh Tam Nguyen"],
+          "institutions": ["Griffith University", "Edith Cowan University", "The University of Queensland", "HUTECH University"],
+          "firstPublished": "2026-09-09",
+          "arxivId": "2609.09551",
+          "doi": "10.48550/arXiv.2609.09551",
+          "resource": { "label": "Code", "url": "https://github.com/phkhanhtrinh23/AGAS" },
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "Security", "Reflection", "Memory", "Environment Feedback"],
+          "description": "AGAS coordinates stateful role-switching attack workers with persistent memory and victim-model feedback, using ReAct execution and Reflexion-style strategy updates to stress-test recommender robustness.",
+          "detailId": "2609.09551",
+          "details": {
+            "abstractZh": "AGAS 将群体 shilling attack 组织成多 Agent 闭环：Coordinator 在 Profiler、Camouflageur、Sniper 与 Inactive 角色间动态分配 stateful worker，worker 用 ReAct 与受害模型交互，Coordinator 则通过 Reflexion 和持久 memory 根据每轮反馈调整整体策略。离线实验覆盖 ML-100K、ML-1M、Genome 2021、Netflix、Douban 与 Amazon，使用 11 个协同过滤受害模型和匹配预算；Claude Opus 4.5 配置的五次运行均值（×10^-3）为 HR@10 41.5±0.5、NDCG@10 17.6±0.3、Rec@50 95.0±1.1，对比 AgentAttack 的 35.2±1.6、14.9±1.4、84.3±1.9。该工作是防御评估所需的攻击面研究，而非良性推荐方法；证据来自模拟黑盒离线环境，没有生产攻击或防御部署，因此不应把效果外推到真实平台。",
+            "abstractEn": "AGAS frames group shilling as a multi-agent loop. A coordinator dynamically assigns stateful workers to Profiler, Camouflageur, Sniper, and Inactive roles; workers interact with victim models through ReAct, while the coordinator uses Reflexion and persistent memory to revise the round-level strategy from feedback. Offline experiments span ML-100K, ML-1M, Genome 2021, Netflix, Douban, and Amazon with 11 collaborative-filtering victims and matched budgets; over five runs, the Claude Opus 4.5 setup reports HR@10 41.5±0.5, NDCG@10 17.6±0.3, and Rec@50 95.0±1.1 (all ×10^-3), versus AgentAttack's 35.2±1.6, 14.9±1.4, and 84.3±1.9. This is adversarial stress-testing rather than a benign recommender, and its simulated offline black-box evidence should not be extrapolated to production attacks or defenses."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "AtomRec: Evolving Atomic Memory for Agentic Recommendation",
+          "paperUrl": "https://arxiv.org/abs/2609.04882",
+          "venue": "arXiv 2026",
+          "authors": ["Peiyu Hu", "Weihai Lu", "Siying Gu", "Zhuodong Liu", "Zhaokai Luo", "Yuean Niu", "Zhiyong Wang", "Jia Wang"],
+          "institutions": ["Xi'an Jiaotong-Liverpool University", "Xiaohongshu", "Peking University", "East China Normal University", "Beijing Jiaotong University"],
+          "firstPublished": "2026-09-04",
+          "arxivId": "2609.04882",
+          "doi": "10.48550/arXiv.2609.04882",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Memory", "Memory Evolution", "Collaborative Memory", "Evidence Paths"],
+          "description": "Stores preference evidence as evolving atomic notes, links semantically related user memories, and retrieves multi-hop evidence paths for a recommendation agent instead of repeatedly rewriting monolithic profiles.",
+          "detailId": "2609.04882",
+          "details": {
+            "abstractZh": "AtomRec 把推荐 Agent 的长期记忆拆成可独立更新的 atomic notes：新交互触发字段级演化而非整段画像重写，语义链接把跨用户的相关 note 组成协同 memory graph，Memory Agent 再检索多跳 evidence paths 供 Recommendation Agent 决策。使用 GPT-4o-mini 的实验覆盖 Amazon Books、Goodreads、MovieTV 与 Yelp 四个 MemRec/InstructRec 基准，并按完整 10 候选列表评测 H@3/N@3/H@5/N@5；16 个主表单元均最优，作者报告相对最强基线平均提升约 8.5%，Books 的四项指标为 0.7462/0.6690/0.8543/0.7130，对比 MemRec 的 0.6786/0.6078/0.7764/0.6480，均 p<0.05。成本匹配后仍平均提升约 6.5%，但证据只来自公开离线基准，记忆合并也可能让主导主题覆盖短期、特异偏好，尚无生产延迟和回滚验证。",
+            "abstractEn": "AtomRec decomposes long-term recommender memory into independently editable atomic notes. New interactions trigger field-level evolution rather than monolithic profile rewriting, semantic links connect related notes across users into collaborative memory, and a Memory Agent retrieves multi-hop evidence paths for a Recommendation Agent. With GPT-4o-mini, experiments cover the Amazon Books, Goodreads, MovieTV, and Yelp MemRec/InstructRec benchmarks and evaluate H@3/N@3/H@5/N@5 over the full ten-item candidate set; AtomRec leads all 16 main-table cells, with an average relative gain of about 8.5% over the strongest baseline. On Books it reaches 0.7462/0.6690/0.8543/0.7130 versus MemRec's 0.6786/0.6078/0.7764/0.6480, all p<0.05; cost-matched gains remain about 6.5%, but evidence is offline, memory merging can suppress short-term idiosyncratic preferences, and production latency and rollback are untested."
+          }
+        },
+        {
+          "year": 2026,
           "title": "Agents as Knowledge Integrator and Utilizer in Multimodal Recommendation",
           "paperUrl": "https://arxiv.org/abs/2608.29410",
           "venue": "arXiv 2026",
@@ -289,6 +349,86 @@
       "name": "Search",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "RAP: Research Attention Prediction Reveals Target-Conditioned Evidence Acquisition Biases",
+          "paperUrl": "https://arxiv.org/abs/2609.10092",
+          "venue": "arXiv 2026",
+          "authors": ["Yingqian Wu", "Jingcong Liang", "Siyuan Wang", "Zhenfei Yin", "Philip Torr", "Junchi Yu", "Zhongyu Wei"],
+          "institutions": ["Fudan University", "Shanghai Innovation Institute", "The Chinese University of Hong Kong", "University of Oxford"],
+          "firstPublished": "2026-09-09",
+          "arxivId": "2609.10092",
+          "doi": "10.48550/arXiv.2609.10092",
+          "resource": null,
+          "trainingMethods": ["SFT"],
+          "tags": ["Scientific Search", "Evidence Acquisition", "Trajectory Analysis", "Temporal Evaluation"],
+          "description": "Places forecasting agents in temporally restricted arXiv search environments and uses frozen-evidence replay to expose how target-conditioned retrieval choices bias downstream research-attention predictions.",
+          "detailId": "2609.10092",
+          "details": {
+            "abstractZh": "RAP 让 Agent 只能搜索预测时点之前可见的 arXiv 论文，再预测八个研究方向未来六个月的关注分布，并通过 closed、fixed-window 与 expanding-history 三种证据访问制度以及 frozen-evidence replay，把搜索策略效应与预测模型效应分离。基准覆盖 278 个研究领域和 1,390 个 rolling episodes；对 Qwen3-4B 做 outcome-aligned fine-tuning 后，预测 Spearman correlation 提升 0.105，而在 exact-history 设置中只有重新开放 Search 的 GPT-5.5 略超 exact-count EWMA。它研究的是科学检索轨迹如何影响预测，不是通用排序器；arXiv 提交份额只是 attention proxy，八方向 codebook 不是专家 taxonomy，且只有 Forecast-Strict 设置能支持真正的未见未来结论。",
+            "abstractEn": "RAP restricts an agent to arXiv papers available before each forecast date and asks it to predict the next six-month attention distribution over eight research directions. Closed, fixed-window, and expanding-history access regimes plus frozen-evidence replay separate search-policy effects from forecasting effects. The benchmark contains 278 fields and 1,390 rolling episodes; outcome-aligned fine-tuning of Qwen3-4B improves forecast Spearman correlation by 0.105, while only GPT-5.5 with reopened Search slightly exceeds the exact-count EWMA baseline under exact history. The work studies how scientific-search trajectories bias prediction rather than proposing a general ranker; arXiv share is only an attention proxy, the eight-way codebooks are not expert taxonomies, and only Forecast-Strict supports unseen-future claims."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Beyond One-Shot Expansion: Contrastive Evidence Exploration for Multi-Hop Retrieval",
+          "paperUrl": "https://arxiv.org/abs/2609.07050",
+          "venue": "CIKM 2026",
+          "authors": ["JungMin Yun", "YoungBin Kim"],
+          "institutions": ["Chung-Ang University"],
+          "firstPublished": "2026-09-07",
+          "arxivId": "2609.07050",
+          "doi": "10.1145/3799682.3840072",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Iterative Retrieval", "Evidence Exploration", "Multi-Hop", "Coverage Control"],
+          "description": "Runs four evidence-conditioned retrieval rounds, generating probes for unresolved information needs and selecting complementary passages with coverage-aware contrastive facets.",
+          "detailId": "2609.07050",
+          "details": {
+            "abstractZh": "该方法把一次性 query expansion 改造成四轮 evidence exploration：每轮先总结已取证内容，再针对尚未解决的信息缺口和新暴露的 bridge entities 生成 probe，用 passage-specific contrastive facets 细化候选，并以 coverage-aware 贪心选择避免重复证据。MuSiQue 的 FSR@10 从最佳基线 39.20 提升至 57.00，2WikiMultihopQA 从 75.60 提升至 91.50，HotpotQA 从 93.30 提升至 96.20；移除 sequential exploration 后 MuSiQue FSR@10 由 57.00 降到 36.50。结果来自三个固定多跳 QA 语料、单一文本编码器和 probe LLM、固定四轮检索，没有 live-Web 环境，因此更适合作为迭代取证机制证据而非线上部署结论。",
+            "abstractEn": "The method replaces one-shot query expansion with four rounds of evidence exploration. Each round summarizes accumulated evidence, generates probes for unresolved needs and newly exposed bridge entities, refines candidates with passage-specific contrastive facets, and greedily selects complementary evidence under coverage control. FSR@10 rises from the strongest baseline's 39.20 to 57.00 on MuSiQue, 75.60 to 91.50 on 2WikiMultihopQA, and 93.30 to 96.20 on HotpotQA; removing sequential exploration drops MuSiQue FSR@10 from 57.00 to 36.50. Evidence is limited to three fixed multi-hop QA corpora, one encoder and probe LLM, and four retrieval rounds without a live-Web environment."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Evaluating Deep-Search Agents under Hierarchical Web Evidence Poisoning",
+          "paperUrl": "https://arxiv.org/abs/2609.06027",
+          "venue": "arXiv 2026",
+          "authors": ["Zhongan Bi", "Qiwen Wang", "Jianrong Jiang", "Jigang Ding", "Wenwen Xiong", "Changhua Meng", "Xuanang Gao", "Kepeng Lin", "Changjiang Jiang", "Yi'ang Chen", "Huan Yao", "Wei Wang", "Zhenyu Ma", "Wenhui Dong"],
+          "institutions": ["Ant Group", "Zhejiang University"],
+          "firstPublished": "2026-09-05",
+          "arxivId": "2609.06027",
+          "doi": "10.48550/arXiv.2609.06027",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Deep Search", "Environment Interaction", "Evidence Poisoning", "Verification"],
+          "description": "HAE-GEO evaluates complete search trajectories in paired clean and poisoned Web environments, tracking whether agents expose, adopt, verify, recover from, or endorse false evidence.",
+          "detailId": "2609.06027",
+          "details": {
+            "abstractZh": "HAE-GEO 把深度搜索安全评测从最终答案扩展到 exposure→adoption→verification→recovery→endorsement 完整轨迹：Agent 在成对的 clean/poisoned 环境中执行最多十轮 Search、Scrape 和 Answer 动作，并可通过自适应 query 查找此前未见来源来纠错。环境包含 72,039 个干净网页，并在每个攻击强度下加入 770 个 poisoned pages，覆盖八类产品、154 个品牌；主评测使用 120 个问题和十个模型家族。该研究提供的是受控检索环境中的诊断基准，而非新的生产搜索器；问题子集固定，poisoning 操纵事实证据但不包含 prompt injection，因此不能覆盖开放 Web 的全部攻击面。",
+            "abstractEn": "HAE-GEO extends deep-search safety evaluation from final answers to the full exposure→adoption→verification→recovery→endorsement trajectory. Agents take up to ten Search, Scrape, and Answer rounds in paired clean and poisoned environments and may issue adaptive verification queries to inspect previously unseen sources. The environment contains 72,039 clean pages plus 770 poisoned pages per attack level across eight product categories and 154 brands; the main evaluation covers 120 queries and ten model families. This is a diagnostic benchmark in a controlled retrieval environment rather than a new production searcher; the subset is fixed and poisoning alters factual evidence without prompt injection, so it does not cover the full open-Web threat surface."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "ITER: Interaction-Aware Retrieval for Agentic Search",
+          "paperUrl": "https://arxiv.org/abs/2608.27912",
+          "venue": "arXiv 2026 (under review)",
+          "authors": ["Haodong Chen", "Shuai Wang", "Yu Yin", "Shengyao Zhuang", "Guido Zuccon", "Teerapong Leelanupab"],
+          "institutions": ["The University of Queensland"],
+          "firstPublished": "2026-08-28",
+          "arxivId": "2608.27912",
+          "doi": "10.48550/arXiv.2608.27912",
+          "resource": { "label": "Code", "url": "https://github.com/ielab/ITER" },
+          "trainingMethods": ["SFT"],
+          "tags": ["Trajectory Learning", "Interaction History", "Iterative Retrieval", "Dense Retrieval"],
+          "description": "Trains a retriever on full agent interaction state and trajectory-relative positives, redundancy negatives, and hard negatives so later searches account for prior queries and visited evidence.",
+          "detailId": "2608.27912",
+          "details": {
+            "abstractZh": "ITER 不再把每次 retrieval 当作孤立 query：编码器联合表示主问题、当前 subquery 和此前 subqueries，并从成功 Agent 轨迹中构造 step-specific positives、分层 redundancy negatives、hard/weak negatives，以加权对比目标训练 interaction-aware retriever。训练数据由 InfoSeek 的 10,000 个问题和四种 retriever 产生 40,000 条轨迹，保留 20,893 条成功轨迹、67,934 个正样本对；在六种 Agent backbone 上评测 InfoSeek-Eval 与 BrowseComp-Plus，Tongyi-DeepResearch-30B 的任务成功率分别为 80.0 和 46.6，对比 LRAT 的 72.7/43.4 及 current-query-only 的 76.7/43.7，12 个组合中 7 个达到显著差异。它只训练固定 ranked interface 后的 retriever，标签依赖 Qwen judge 且仅从成功轨迹学习，实验也使用固定语料，不能等同于端到端 Agent 或 live-Web 部署。",
+            "abstractEn": "ITER stops treating retrieval steps as isolated queries. Its encoder jointly represents the main question, current subquery, and prior subqueries, and trains with weighted contrastive learning over step-specific positives, tiered redundancy negatives, and hard or weak negatives mined from successful agent trajectories. From 40,000 trajectories generated for 10,000 InfoSeek questions with four retrievers, it retains 20,893 successful trajectories and 67,934 positive pairs; across six agent backbones on InfoSeek-Eval and BrowseComp-Plus, Tongyi-DeepResearch-30B reaches 80.0 and 46.6 task success versus LRAT's 72.7/43.4 and current-query-only retrieval's 76.7/43.7, with significance in seven of 12 comparisons. The method trains only the retriever behind a fixed ranked interface, depends on a Qwen judge and successful trajectories, and uses fixed corpora rather than an end-to-end live-Web deployment."
+          }
+        },
         {
           "year": 2026,
           "title": "Headroom-Drift Replay: A Primitive for Principled Replay Control in GRPO",
@@ -723,6 +863,46 @@
       "name": "Industry Deployments",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "AutoLR: Automating the Path from Research to Launch Review in Industrial Recommender Systems",
+          "paperUrl": "https://arxiv.org/abs/2609.04871",
+          "venue": "arXiv 2026",
+          "authors": ["Qi Zhang", "Yanlin Chen", "Wenchao Xiao"],
+          "institutions": ["NetEase, Inc."],
+          "firstPublished": "2026-09-04",
+          "arxivId": "2609.04871",
+          "doi": "10.48550/arXiv.2609.04871",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "Multi-Agent", "Experiment Memory", "Tool Use", "Human Gate"],
+          "description": "NetEase's multi-expert harness coordinates proposals, adversarial review, code, training, evaluation, and persistent experiment-state updates, stopping at a human-gated Launch Review for online testing.",
+          "detailId": "2609.04871",
+          "details": {
+            "abstractZh": "AutoLR 在网易 DASHEN 游戏社区推荐系统中把研究假设、multi-expert council 审查、代码实现、训练、离线评测和 experiment-state 回写串成闭环，并以确定性的 evidence-weighted exploration/exploitation selector、执行器、指标和 guardrail 约束 LLM；自主流程止于离线候选打包，由工程师决定线上 A/B，Launch Review 保留人工门禁。数月审计覆盖两个推荐场景、1,586 次唯一完成评测和 9 次正向生产 Launch Review；异构 signed lift 记录的描述性总和为消费渗透 +5.75%、总消费时长 +10.83%、有效播放 +5.55%，单次迭代 LLM API 成本约人民币 3–4 元（不含训练与基础设施）。证据只来自一个应用和两个场景，指标不是 pooled treatment effect，论文也缺少组件级因果效应、false-promotion rate、完整随机化/置信区间及不可变的离线到线上 lineage。",
+            "abstractEn": "AutoLR connects research hypotheses, multi-expert adversarial review, code implementation, training, offline evaluation, and experiment-state write-back for NetEase's DASHEN recommender. Deterministic evidence-weighted exploration/exploitation selection, execution, metrics, and guardrails bound the LLM, and autonomy stops at offline candidate packaging before engineers choose online A/B tests through a human-gated Launch Review. The audited corpus spans two scenarios, 1,586 unique completed evaluations, and nine positive production Launch Reviews; heterogeneous signed lift records sum descriptively to +5.75% consumption penetration, +10.83% total consumption time, and +5.55% valid views, with RMB 3–4 LLM API cost per iteration excluding training and infrastructure. Evidence covers one application and two scenarios, the lift sums are not pooled treatment effects, and component-level causality, false-promotion rate, complete randomization/confidence records, and immutable offline-to-online lineage are unavailable."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Inventory-Grounded Policy-Level Optimization for Training-Free AI Search",
+          "paperUrl": "https://arxiv.org/abs/2609.04813",
+          "venue": "EMNLP 2026 Industry Track",
+          "authors": ["Wei Zhou", "Tiandeng Wu", "Jiandong Ding", "Zhufeng Fan", "Yi Cao"],
+          "institutions": ["Huawei Technologies Co., Ltd."],
+          "firstPublished": "2026-09-04",
+          "arxivId": "2609.04813",
+          "doi": "10.48550/arXiv.2609.04813",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Production Deployed", "Inventory Grounding", "Policy Memory", "Online A/B", "Query Planning"],
+          "description": "Huawei's commercial AI-search loop probes runtime inventory, diagnoses policy versus inventory failures through grouped rollouts, replay-validates guideline edits, and persists stage-specific policies without model training.",
+          "detailId": "2609.04813",
+          "details": {
+            "abstractZh": "IGPO 面向固定模型的商业 AI search pipeline：运行时探测可用 inventory 并构造 inventory portrait，离线 stochastic grouped rollouts 区分 route policy 缺失与底层 inventory 缺失，inventory-guided exploration 生成 stage-specific guideline，经过 replay validation 后写入持久 policy store，再注入线上 retrieval/selection。系统自 2026 年 5 月部署；14 天 50/50 随机 A/B 覆盖 100,400 个 control 和 99,800 个 treatment 用户，CTR 相对提升 3.17%（95% CI 1.9–4.5%，p<0.001），审计 bad cases 降低 38.9%（95% CI 25.2–50.1%），延迟开销为 p50 49.4ms、p95 185.8ms。效果依赖 inventory probe、metadata 和检索接口的完整性，维护证据仅覆盖 31 天和 43–64 条 guideline 的规模，长期增长、跨系统迁移及主动 stale-guideline 检测尚未验证。",
+            "abstractEn": "IGPO adapts a fixed commercial AI-search pipeline by probing runtime inventory and constructing inventory portraits. Offline stochastic grouped rollouts distinguish missing route policy from missing underlying inventory; inventory-guided exploration proposes stage-specific guidelines, replay validation filters edits, and a persistent policy store injects them into online retrieval and selection without model training. Deployed since May 2026, a 14-day 50/50 randomized A/B test covers 100,400 control and 99,800 treatment users, reporting +3.17% relative CTR (95% CI 1.9–4.5%, p<0.001), 38.9% fewer audited bad cases (95% CI 25.2–50.1%), and 49.4 ms p50/185.8 ms p95 latency overhead. Results depend on inventory probes, metadata, and retrieval interfaces, while maintenance evidence spans only 31 days and 43–64 guidelines without long-term growth, cross-system transfer, or proactive stale-guideline detection."
+          }
+        },
         {
           "year": 2026,
           "title": "CORAL: An LLM-Native Harness for Production Recommender Systems",
