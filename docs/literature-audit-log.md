@@ -1,5 +1,13 @@
 # Literature Audit Log
 
+## 2026-09-11
+
+- Scope: daily incremental primary-source screening for work first published from 2025-01-01 through 2026-09-11 across agentic recommendation, user/behavior memory, agentic search, advertising/bidding, and named industrial systems.
+- Retrieval: followed the `research-lit` workflow with the available first-party web index and direct official pages. No local PDFs were found in `papers/` or `literature/`; no Zotero or Obsidian source was configured. The official arXiv API was retried through the permitted network route but timed out without a response, so it could not be used to complete a metadata package.
+- Candidates: 6 candidate records were mechanically screened after URL/title normalization: RE-Searcher, MR-Search, RTBAgent, and three current Alibaba Cloud product documents. Fully verified and added: 0. Corrected: 0. Removed: 0. The collection remains at 59 entries.
+- Decision: no candidate was promoted. The two research papers newly surfaced by this screen lacked a complete first-party affiliation/experimental-metric package within the available primary records; RTBAgent is an already-known 2025 work pending the same full-field recheck. The Alibaba pages are implementation documentation, not authored industrial reports with reproducible evaluation metrics. Search snippets were used only for discovery and supplied no catalog metadata.
+- Verification: `node scripts/generate-readme.mjs --check`, JavaScript syntax validation, duplicate URL/detail-ID/title/arXiv/DOI checks for the catalog fields that exist, date-window checks, two consecutive README generations with identical SHA-256, and `git diff --check` passed. A stricter optional audit also found a pre-existing legacy `ReasonRec` record without author/institution/firstPublished fields; this was not altered in this no-addition run and needs a separately sourced correction before it can satisfy the newer full-field standard.
+
 ## 2026-09-10
 
 - Scope: incremental primary-source search for 2025-01-01 through 2026-09-10 across agentic recommendation, user modeling, search, advertising, and industrial deployments, with special attention to papers first posted after the previous run and explicit rechecks of the prior backlog.
