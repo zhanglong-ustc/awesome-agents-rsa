@@ -1,5 +1,15 @@
 # Literature Audit Log
 
+## 2026-09-12
+
+- Scope: daily incremental primary-source screening for work first published from 2025-01-01 through 2026-09-12 across agentic recommendation, user/behavior modeling, agentic search, advertising/bidding, and named industrial systems.
+- Retrieval: followed the `research-lit` workflow with three read-only fan-out shards for recommendation, search, and advertising/industry, followed by parent-side checks of official arXiv category/history/full-text records, ACL Anthology metadata, conference statements, and official project links. No local PDFs were found in `papers/`, `literature/`, or a configured paper library; no Zotero or Obsidian source was requested. `arxiv_fetch.py` and `verify_papers.py` were unresolved, and the official arXiv export API returned HTTP 429, so direct first-party paper pages supplied the fallback evidence package.
+- Candidates: 39 unique curated candidate records after mechanical arXiv-ID/DOI/normalized-title de-duplication (12 recommendation, 10 search, 15 advertising/industry records, one cross-shard duplicate, and three additional unique current-listing candidates). Fully verified and added: 4. Corrected: 1. Removed: 0. The collection increased from 59 to 63 entries.
+- Added search: MOSAIC (`2609.11065`) for per-query GraphRAG exploration-policy synthesis; VikingRAG (`2609.11390`) for hierarchical document tools, experience-edge memory, and evidence-triggered escalation; Agentic Share-of-Search (`2609.11190`, Decision Sciences Institute Annual Conference 2026) for multi-agent competitive e-commerce visibility analysis; and SearchAtlas (`2609.10901`, Findings of EMNLP 2026) for evidence-DAG analysis of complete search trajectories.
+- Correction: completed the existing ReasonRec ACL Findings record with all 13 authors, three institutions, first-publication date `2026-07-02`, and ACL Anthology DOI `10.18653/v1/2026.findings-acl.391` from the official PDF and BibTeX record.
+- Exclusions and deferrals: Kuaishou UniRec (`2609.11052`) was excluded because its two named fusion agents are feed-forward model components without planning, memory, tool use, environment interaction, reflection, multi-agent orchestration, or trajectory-level RL. The remaining screened records were not promoted because they were older backlog items or had not completed the same parent-side full-field verification package in this daily increment; discovery summaries supplied no catalog metadata.
+- Evidence limits: MOSAIC, VikingRAG, and SearchAtlas are offline studies, and Agentic Share-of-Search is a small Gemini-only live pilot plus synthetic ablations; the catalog text does not claim production deployment. All numerical results, venue statements, affiliations, and limitations are restricted to the corresponding first-party paper records.
+
 ## 2026-09-11
 
 - Scope: daily incremental primary-source screening for work first published from 2025-01-01 through 2026-09-11 across agentic recommendation, user/behavior memory, agentic search, advertising/bidding, and named industrial systems.

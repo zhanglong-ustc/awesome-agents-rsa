@@ -152,6 +152,10 @@
           "title": "ReasonRec: A Reasoning-Augmented Multimodal Agent for Unified Recommendation",
           "paperUrl": "https://aclanthology.org/2026.findings-acl.391",
           "venue": "ACL Findings 2026",
+          "authors": ["Yihua Zhang", "Mingfu Liang", "Jiyan Yang", "Rong Jin", "Wen-Yen Chen", "Yiping Han", "Huayu Li", "Buyun Zhang", "Liang Luo", "Luke Simon", "Sijia Liu", "Tianlong Chen", "Xi Liu"],
+          "institutions": ["Meta AI", "Michigan State University", "University of North Carolina at Chapel Hill"],
+          "firstPublished": "2026-07-02",
+          "doi": "10.18653/v1/2026.findings-acl.391",
           "resource": null,
           "trainingMethods": ["SFT", "RL"],
           "tags": ["Multimodal", "CoT", "Tool Delegation", "Uncertainty"],
@@ -349,6 +353,86 @@
       "name": "Search",
       "kind": "papers",
       "entries": [
+        {
+          "year": 2026,
+          "title": "MOSAIC: Query-Aware Exploration Policy Adaptation for GraphRAG",
+          "paperUrl": "https://arxiv.org/abs/2609.11065",
+          "venue": "arXiv 2026",
+          "authors": ["EunKyeong Lee", "Kyeong-Jin Oh", "Jinwon Kim", "Hye Woo Lee", "Minsang Song", "Hyeongjun Jang", "Junyoung Youn"],
+          "institutions": ["KT Corporation"],
+          "firstPublished": "2026-09-10",
+          "arxivId": "2609.11065",
+          "doi": "10.48550/arXiv.2609.11065",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["GraphRAG", "Query Planning", "Adaptive Traversal", "Evidence Selection"],
+          "description": "An analyzer converts each query into a bounded graph-exploration policy covering seed choice, traversal, cumulative-gain stopping, and evidence selection instead of applying one fixed GraphRAG recipe.",
+          "detailId": "2609.11065",
+          "details": {
+            "abstractZh": "MOSAIC 用 LLM Analyzer 在每个问题到来时生成受约束的 GraphRAG 探索策略，联合控制 seed 选择、图遍历、基于累计增益的停止条件和最终证据筛选，并在有限动作空间内校验策略后执行。GraphRAG-Bench 上 query-weighted ACC 在 Medical/Novel 分别达到 76.97/64.33，比最强报告基线高 5.13/4.43 个点；Medical 的 Evidence Recall 与 Context Relevancy 为 95.1/86.1，相比最强固定策略少走 81.9% 路径、少取 47.2% 证据。HotpotQA、MuSiQue 与 2WikiMultiHopQA 迁移实验仍有增益，但方法会引入额外 Analyzer 延迟，且没有生产部署证据。",
+            "abstractEn": "MOSAIC uses an LLM analyzer to synthesize a constrained GraphRAG exploration policy for each query, jointly controlling seed selection, graph traversal, cumulative-gain stopping, and final evidence selection before validating and executing the policy. On GraphRAG-Bench, query-weighted accuracy reaches 76.97 on Medical and 64.33 on Novel, 5.13 and 4.43 points above the strongest reported baselines; Medical evidence recall/context relevancy is 95.1/86.1 while using 81.9% fewer paths and 47.2% fewer evidence items than the strongest fixed policy. Transfer experiments on HotpotQA, MuSiQue, and 2WikiMultiHopQA remain positive, but the analyzer adds latency and no production deployment is reported."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "VikingRAG: Accurate and Token-efficient Retrieval-augmented Generation over Structured Documents",
+          "paperUrl": "https://arxiv.org/abs/2609.11390",
+          "venue": "arXiv 2026",
+          "authors": ["Peiyuan Gao", "Gaoyuan Zhang", "Haojie Qin", "Yahui Sun", "Qianyi Zhang", "Yunhao Zhang", "Zeyu Wang", "Wei Lu"],
+          "institutions": ["Renmin University of China", "Independent Researcher", "Fudan University"],
+          "firstPublished": "2026-09-10",
+          "arxivId": "2609.11390",
+          "doi": "10.48550/arXiv.2609.11390",
+          "resource": { "label": "Code", "url": "https://github.com/rucdatascience/VikingRAG" },
+          "trainingMethods": ["Training-free"],
+          "tags": ["Structured Documents", "Tool Use", "Experience Memory", "Adaptive Escalation"],
+          "description": "Alternates Search/List/Grep/Read actions over hierarchical documents, writes successful multi-round traces into reusable experience edges, and escalates from one-round retrieval only when an evidence-sufficiency verifier fires.",
+          "detailId": "2609.11390",
+          "details": {
+            "abstractZh": "VikingRAG 在结构化文档树上让 Agent 以最多 15 步交替调用 Search、List、Grep 和 Read，并累积证据后作答；历史多轮轨迹被物化为 experience edges，形成可复用的检索 memory，evidence-sufficiency verifier 则只在单轮证据不足时触发昂贵的 agentic path。六个数据集覆盖 VersionQA、SyllabusQA、QASPER、HotpotQA、LegalBench-CUAD 与 FinanceBench，语料最大约 878 万 token，使用 DeepSeek-V4-Pro、GPT-5.5、Seed-2.0 和 GLM-4.7。作者报告基础版只消耗对比方法 11.6%–51.9% 的 token，加入 experience 与自适应升级后降至 5.1%–32.5%，但证据来自静态语料和合成 warm-up 问题，尚无线上部署。",
+            "abstractEn": "VikingRAG lets an agent alternate Search, List, Grep, and Read for up to 15 steps over hierarchical document trees, accumulating evidence before answering. Historical multi-round traces are materialized as reusable experience edges, while an evidence-sufficiency verifier invokes the expensive agentic path only when one-round retrieval is inadequate. Evaluation spans VersionQA, SyllabusQA, QASPER, HotpotQA, LegalBench-CUAD, and FinanceBench—up to about 8.78 million tokens—with DeepSeek-V4-Pro, GPT-5.5, Seed-2.0, and GLM-4.7. The base system uses 11.6%–51.9% of comparison-method tokens and the experience/adaptive variant 5.1%–32.5%, but evidence is from static corpora and synthetic warm-up questions rather than production."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "Agentic Share-of-Search: A Multi-Agent AI System for Competitive Decision-Making in LLM-Mediated E-Commerce",
+          "paperUrl": "https://arxiv.org/abs/2609.11190",
+          "venue": "Decision Sciences Institute Annual Conference 2026",
+          "authors": ["Spandan Ghose Chowdhury"],
+          "institutions": ["College of Computing, Georgia Institute of Technology"],
+          "firstPublished": "2026-09-10",
+          "arxivId": "2609.11190",
+          "doi": "10.48550/arXiv.2609.11190",
+          "resource": null,
+          "trainingMethods": ["Training-free"],
+          "tags": ["Multi-Agent", "E-Commerce Search", "Tool Use", "Competitive Analytics"],
+          "description": "A coordinator fans query–platform tasks to retrieval agents, an extraction agent normalizes product mentions, and a ReAct diagnostic agent calls statistical and SOP-validation tools to turn LLM answer visibility into retailer actions.",
+          "detailId": "2609.11190",
+          "details": {
+            "abstractZh": "Agentic Share-of-Search 用 Coordinator 将 query–platform 组合分派给 ChatGPT、Perplexity 与 Gemini 查询 Agent，Extraction Agent 解析商品提及，ReAct Diagnostic Agent 再调用相关性分析和 SOP 校验工具，把可见度变化转成运营建议。运行鞋案例包含 23 个 SKU、7 家零售商、34 个查询、3 个平台和 3 次重复，共 306 个回答与 1,524 次提及；100 次合成消融中，目标处于 top-1 时建议精确率为 39%（95% CI 30.0–48.8），进入 top-3 时为 63.9%。真实 pilot 只覆盖 Gemini，仍是可行性原型，跨平台纵向部署、干预效果与更大规模人工标注尚未完成。",
+            "abstractEn": "Agentic Share-of-Search has a coordinator dispatch query–platform pairs to ChatGPT, Perplexity, and Gemini agents, an extraction agent normalize product mentions, and a ReAct diagnostic agent call correlation and SOP-validation tools to convert visibility changes into retailer actions. Its running-shoes study covers 23 SKUs, seven retailers, 34 queries, three platforms, and three repetitions—306 responses and 1,524 mentions; across 100 synthetic ablation trials, recommendation precision is 39% (95% CI 30.0–48.8) when the target ranks first and 63.9% when it reaches the top three. The live pilot is Gemini-only and remains a feasibility prototype without longitudinal multi-platform deployment or measured intervention effects."
+          }
+        },
+        {
+          "year": 2026,
+          "title": "SearchAtlas: Analyzing Agentic Search Strategies via Evidential Query Graphs",
+          "paperUrl": "https://arxiv.org/abs/2609.10901",
+          "venue": "Findings of EMNLP 2026",
+          "authors": ["Jiacheng Sang", "Mengyuan Li", "Sanxing Chen", "Yukun Huang", "Yu Feng", "Bhuwan Dhingra"],
+          "institutions": ["Duke University", "University of Pennsylvania"],
+          "firstPublished": "2026-09-09",
+          "arxivId": "2609.10901",
+          "doi": "10.48550/arXiv.2609.10901",
+          "resource": { "label": "Code", "url": "https://github.com/DukeNLP/SearchAtlas" },
+          "trainingMethods": ["Training-free"],
+          "tags": ["Trajectory Analysis", "Evidence Graph", "Agent Evaluation", "Search Strategy"],
+          "description": "Converts complete search traces into evidential query DAGs that attribute which searches support which conclusions, enabling structural comparison and failure diagnosis across agent families.",
+          "detailId": "2609.10901",
+          "details": {
+            "abstractZh": "SearchAtlas 把完整搜索轨迹解析成 evidential query DAG：节点表示 query/claim，边表示某次检索对后续结论的证据贡献，从而把只看最终答案的评测扩展为搜索结构、证据复用和失败路径诊断。框架分析五种搜索 Agent、三个基准与 1,350 条轨迹，并用 100 张人工标注图评估归因质量；四种 LLM 解析器的 macro edge F1 为 0.814–0.860，基于图特征的成功/失败诊断 ROC-AUC 为 0.840–0.856。不同系统的中位节点/边数从 6/7 到 103/165、深度从 2 到 26、多来源比例从 8% 到 39%；它是事后分析框架而非新搜索策略，结果也依赖自动证据归因。",
+            "abstractEn": "SearchAtlas parses complete search trajectories into evidential query DAGs whose nodes represent queries or claims and whose edges attribute which searches support later conclusions, extending endpoint evaluation to search structure, evidence reuse, and failure-path diagnosis. It analyzes five search agents over three benchmarks and 1,350 trajectories, with 100 human-annotated graphs for attribution quality; four LLM parsers achieve macro edge F1 of 0.814–0.860, and graph-feature failure diagnosis reaches ROC-AUC 0.840–0.856. Median nodes/edges range from 6/7 to 103/165, depth from 2 to 26, and multi-source rates from 8% to 39%. This is a post-hoc analysis framework rather than a new search policy, and conclusions depend on automated evidence attribution."
+          }
+        },
         {
           "year": 2026,
           "title": "RAP: Research Attention Prediction Reveals Target-Conditioned Evidence Acquisition Biases",
